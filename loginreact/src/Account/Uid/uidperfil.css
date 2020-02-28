@@ -5,7 +5,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  background: url("../../../../Gen/components/imagenes2/INNOVA-az4.png") center center / cover no-repeat fixed;
+  background: url("../../imagenes/atsurabzaid_logo_remasterizado_negativo_expanfet.png") center center / cover no-repeat fixed;
 }
 .modas-uid{
   display: flex;
@@ -35,7 +35,7 @@
 }
   .masthead-2-uid {
     /* Layout declarations */
-    background: url("../../../../Gen/components/imagenes2/fondo_az_vgs.jpg") no-repeat fixed center;
+    background: url("../../imagenes/atsurabzaid_logo_remasterizado_negativo_expanfet.png") no-repeat fixed center;
     background-size: cover;
     padding: 3em 1em;
     border-top: 0px solid #EDEDED;

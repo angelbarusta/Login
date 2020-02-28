@@ -14,9 +14,9 @@ import {
   Popup
 } from "semantic-ui-react";
 import "./uidperfil.css";
-import { vnavNo } from "../../../../redux/actions/Nav";
+import { vnavNo } from "../../redux/actions/Nav";
 
-import SignOutButton from "../../../../Gen/components/SignOut";
+import SignOutButton from "../../SignOut";
 import moment from "moment";
 import firebase from "firebase";
 import app from "firebase/app";
@@ -219,7 +219,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(PerfilCliente);
+export default connect(null, mapDispatchToProps)(PerfilCliente);

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import user from "../../imagenes/dialflow.png";
 import "./imagen-home.scss";
-import { vnavSi } from "../../../../redux/actions/Nav";
+import { vnavSi } from "../../redux/actions/Nav";
 import { connect } from "react-redux";
-import { OpenGraf } from "../../../../redux/actions/Campo";
+import { OpenGraf } from "../../redux/actions/Campo";
 import { AuthUserContext } from "../../Session";
 import { Popup } from "semantic-ui-react";
 

@@ -21,21 +21,11 @@ import { vnavSi, vnavNo } from "../redux/actions/Nav";
 import Imgperfil from "../Head/img-home/imagen-home";
 // import SinExistencias from "../../Eventos/SinExistencias";
 import PerfilCliente from "../Account/Uid";
-// import Campocrops from "../../Crops/components/campo.js";
-// import Campopets from "../../Gen/components/Generadores/campo";
-// import Campoykan from "../../Ykan/components/Campo";
 
 import { AuthUserContext } from "../../Gen/components/Session";
 import { Transition, Divider, Button, Menu } from "semantic-ui-react";
 
 class Appaz extends Component {
-  //   constructor(props){
-  //     console.log("PROPS",props)
-  //     super(props);
-  //    this.state={
-  //       nav:false,
-  //     }
-  //  }
   state = { visible: true };
 
   toggleVisibility = () =>
@@ -70,7 +60,6 @@ class Appaz extends Component {
             </div>
           )}
 
-          <Route exact path={ROUTES.LANDING} component={LandingPage} />
           <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
           <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
           <Route
