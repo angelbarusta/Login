@@ -7,9 +7,9 @@ import { Button, Icon, Card, Popup } from "semantic-ui-react";
 import { SignUpLink } from "../SignUp";
 import { PasswordForgetLink } from "../PasswordForget";
 import { withFirebase } from "../Firebase";
-import * as ROUTES from "../../../rutas/constants-routes.js";
+import * as ROUTES from "../rutas/constants-routes.js";
 import { connect } from "react-redux";
-import { vnavNo } from "../../../redux/actions/Nav";
+import { vnavNo } from "../redux/actions/Nav";
 // import {Googlelogo} from '../../../imagenes2/google-icon-logo.jpg';
 import { Divider, Form, Grid, Segment } from "semantic-ui-react";
 
