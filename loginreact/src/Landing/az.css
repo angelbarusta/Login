@@ -1,0 +1,359 @@
+/* ENTIRE DOCUMENT */
+/* Styling for the whole page */
+.az-body {
+    /* Layout declarations */
+    margin: 0 auto;
+    /* Typography declarations */
+    font-size: 62.5%;
+    font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    font-weight: 300;
+    color: #EDEDED;
+    -webkit-font-smoothing: antialiased;
+  }
+ 
+  
+  /* HEADER */
+  .masthead {
+    /* Layout declarations */
+    /* background: url("../../../Gen/components/imagenes2/fond8.gif") no-repeat fixed center; */
+    background: url("../../../Gen/components/imagenes2/INNOVA-az4.png") no-repeat fixed center;
+    background-size: cover;
+     padding: 5.5em 2em; 
+  
+    border-top: 0px solid #EDEDED;
+    text-align: center;
+    /* text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1); */
+    /* Typography declarations */
+    font-size: 4em;
+  }
+  .masthead-2 {
+    /* Layout declarations */
+    background: url("../../../Gen/components/imagenes2/comentarios.png") no-repeat fixed center;
+    background-size: cover;
+    padding: 5em 2em;
+    border-top: 0px solid #EDEDED;
+    text-align: center;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+    /* Typography declarations */
+    font-size: 4em;
+  }
+  
+  .masthead-intro {
+    /* margin: 2em 0 0 0; */
+    font-size: 20px;
+    font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  }
+  
+  .masthead-heading {
+    /* Typography declarations */
+    font-size: 10rem;
+    font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    /* Layout declarations */
+    padding: 0;
+    margin: 0 0 1em;
+  }
+  
+  /* BODY */
+  /* General styling for the three sections of the body */
+  section {
+    /* Layout declarations */
+    max-width: 50em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    padding: 10px;
+    color: white
+  }
+  section:hover {
+    /* Layout declarations */
+    max-width: 50em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    padding: 10px;
+  }
+  
+  /* Gradient that runs through the body */
+   .gradient-landing {
+    /* background: url("../../../Gen/components/imagenes2/fond2.gif") no-repeat fixed center; */
+     /* padding: 10em;  */
+     color: rgb(73, 71, 78);
+     background-color: transparent; 
+     display: flex;
+     justify-content: space-between;
+     height: 380px;
+     align-items: center;    
+     padding: 180px 0px 180px 10px;
+   } 
+   .gradient-2 {
+    /* background: url("../../../Gen/components/imagenes2/fond2.gif") no-repeat fixed center; */
+     /* padding: 10em;  */
+     color: rgb(73, 71, 78);
+     background-color: transparent; 
+     display: flex;
+     justify-content: space-between;
+     height: 380px;
+     align-items: center;    
+   } 
+
+  
+  /* The h2 tags are the main categories */
+  h2 {
+    /* Typography declarations */
+    font-size: 4em;
+    color: rgb(73, 71, 78);
+    font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  }
+  
+  /* The h3 tags are the additional questions */
+  h3 {
+    /* Typography declarations */
+    font-style: italic;
+    font-size: 2.5em;
+    color: rgb(73, 71, 78);
+    font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  }
+  
+  /* The p tags that are descendants of the section tags are the answers */
+  section p {
+    /* Typography declarations */
+    font-size: 2em;
+    line-height: 1.3em;
+    align-items: center;
+    font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    color: rgb(73, 71, 78);
+  }
+  
+  
+  /* This class is included in the last p tag of each section to create more space */
+  .space-maker {
+    /* Layout declarations */
+    margin-bottom: 3em;
+    color: rgb(73, 71, 78);
+ 
+  }
+  .gradient-3{    
+    cursor: pointer !important;
+    border-radius: 25px !important;
+   }
+  
+  /* FOOTER */
+  .content-footer {
+    /* Layout declarations */
+    background: #000000;
+    padding: 10em;
+    border-bottom: 8px solid #EDEDED;
+  }
+  
+  .content-footer > p {
+    /* Layout declarations */
+    line-height: 1.3em;
+    text-align: center;
+    /* Typography declarations */
+    font-size: 2em;
+    color: rgb(73, 71, 78);
+  }
+  
+  .social {
+    /* Layout declarations */
+    text-align: center;
+    padding: 0;
+  }
+  
+  .social > li {
+    /* Layout declarations */
+    display: inline-block;
+    line-height: 1.3em;
+    margin-right: 2em;
+    /* Typography declarations */
+    font-size: 2em;
+  }
+  
+  .meninf{
+    display:'flex' !important;
+    justify-content:'flex-end' !important;
+    margin: auto!important;
+    padding: 10px;
+    cursor: pointer;
+  } 
+  .meninf:hover{
+    display:'flex' !important;
+    justify-content:'flex-end' !important;
+    margin: auto!important;
+    padding: 10px;
+    cursor: pointer;
+    color: aqua;
+  } 
+ 
+  
+  .social li:last-child {
+    /* Layout declarations */
+    margin-right: 0;
+  }
+  .circ-img-comen{
+    width:150px;
+    height:130px;
+    padding:5px;
+    border: 3px solid #0492a0;
+  }
+  .segmen-comen{
+    color:'black';
+    font-size:20px;
+    font-family:  Lato,Helvetica Neue,Arial,Helvetica,sans-serif; 
+    border-radius:10px;
+  }
+  .comenta-portaf{
+      display: flex;
+      justify-content: center;
+  }
+  
+
+@media only screen and (max-width:1000px){
+    .gradient-2 {
+        display: inherit;
+        height: auto;
+        width: 100%;
+       }
+       .gradient-3{
+        width: 100% !important;
+        cursor: pointer !important;
+        border-radius: 25px !important;
+       }
+}
+
+  
+  /* Responsive design */
+  @media only screen and (max-width: 700px) {
+    .comenta-portaf{
+        display: inherit;
+        margin: auto;
+        justify-content: center;
+    }
+  
+    /* HEADER */
+    .masthead {
+        padding: 4em 2em !important;
+    }
+    
+    .masthead-intro {
+      font-size: 1.5rem;
+      font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    }
+    
+    .masthead-heading {
+      font-size: 3rem;
+      font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+      
+    }
+    
+    /* BODY */
+    .gradient-landing {
+      padding: 5em;
+     display: inherit;
+     height: auto;
+    }
+  
+    h1{
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    }
+    
+    section p {
+      font-size: 1rem;
+      width: 100%;
+      font-family:  Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+      color: rgb(73, 71, 78);
+    }
+    
+    /* FOOTER */
+    .content-footer {
+      padding: 4em;
+    }
+    
+    .social > li {
+    /* Layout declarations */
+    display: block;
+    margin-right: 0;
+    }
+    .circ-img-comen{
+        width:200px;
+        height:200px;
+        padding:5px;
+        margin: auto;
+       
+      }
+      .segmen-comen{
+        color:'black';
+        font-size:5px;
+        font-family:  Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+        border-radius:10px;
+      }
+    
+    
+    .content-footer p a {
+      line-height: 0;
+      color: rgb(73, 71, 78);
+    } 
+
+     .meninf{
+        display:'flex'!important;
+        justify-content:'center'!important;
+        margin: auto !important;
+        color:aqua;
+      } 
+      .space-maker {
+        /* Layout declarations */
+        margin-bottom: 3em;
+        color: rgb(73, 71, 78);
+        display: flex;
+        justify-content: center;
+      }
+  }
+  
+    /* FOOTER */
+  @media only screen and (max-width: 344px) {
+    .content-footer p  {
+      line-height: 3em;
+      
+    }
+    .meninf{
+        display:'flex'!important;
+        justify-content:'center'!important;
+        margin: auto!important;
+        color:aqua;
+      } 
+      .space-maker {
+        /* Layout declarations */
+        margin-bottom: 3em;
+        color: rgb(73, 71, 78);
+        display: flex;
+        justify-content: center;
+      }
+  }
+
+  .linkcont{
+    color:rgb(73, 71, 78);
+  }
+  .linkcont:hover{
+    color:rgb(140, 137, 146); 
+    font-size: 40px;
+  }
+
+
+  

@@ -1,0 +1,15 @@
+.fondoHome-acc{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background: url("../imagenes2/INNOVA-az4.png") center center / cover no-repeat fixed;
+}
+.modas-acc{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 25em 0em;
+}
