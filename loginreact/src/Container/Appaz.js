@@ -1,15 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-//import Ykan from '../../Ykan/container/Appykan';// importamos el componente container ykan
-import LandingPage from "../Landing/index"; // importamos el componente container landing
 import SignUpPage from "../../Gen/components/SignUp";
 import SignInPage from "../../Gen/components/SignIn";
 import PasswordForgetPage from "../../Gen/components/PasswordForget";
 import HomePage from "../../Gen/components/Home";
 import AccountPage from "../Account"; // importamos el componente container perfil usuario  <Route exact path={ROUTES.ACCOUNT} component={AccountPage} />
-// import YkanHome from "../../Ykan/container";
-// import SuccesPay from "../../Eventos/Success";
 
 import * as ROUTES from "../../rutas/constants-routes";
 import Navigation from "../Navigation";
@@ -19,7 +15,7 @@ import { withAuthentication } from "../../Gen/components/Session";
 import { connect } from "react-redux";
 import { vnavSi, vnavNo } from "../redux/actions/Nav";
 import Imgperfil from "../Head/img-home/imagen-home";
-// import SinExistencias from "../../Eventos/SinExistencias";
+
 import PerfilCliente from "../Account/Uid";
 
 import { AuthUserContext } from "../../Gen/components/Session";
