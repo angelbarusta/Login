@@ -9,7 +9,7 @@ import { vnavNo, activeItemNavAcc } from "../../../redux/actions/Nav";
 import { duser } from "../../../redux/actions/User";
 import { Dropdown, Image, Segment, Card, Icon, Popup } from "semantic-ui-react";
 import "./acc.css";
-import SignOutButton from "../../../Gen/components/SignOut";
+import SignOutButton from "../SignOut";
 import { Link } from "react-router-dom";
 
 import firebase from "firebase";

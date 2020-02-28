@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Menu, Segment, Icon, Image, Dropdown, Popup } from "semantic-ui-react";
-import logo from "../../../Gen/components/Generadores/imagenes/atsurabzaid_circle.png";
-import SignOutButton from "../../../Gen/components/SignOut";
-import Imgperfil from "../../../Gen/components/Head/img-home/imagen-home";
+import logo from "../imagenes/az-nuevo.png";
+import SignOutButton from "../SignOut";
+import Imgperfil from "../Head/img-home/imagen-home";
 import {
   activeItemNav,
   activeItemNavAcc,
@@ -11,14 +11,12 @@ import {
   activeItemNavLan,
   activeItemNavNoti
 } from "../../../redux/actions/Nav";
-import logo2 from "../../../Gen/components/imagenes2/Y-KAN.png";
-import { AuthUserContext } from "../../../Gen/components/Session/index";
-import NotiYkanConsumo from "../../../Ykan/components/Notifications/index";
+import logo2 from "../imagenes/az-nuevo.png";
+import { AuthUserContext } from "../Session/index";
 
-import crops from "../../../Gen/components/imagenes2/crops.png";
-import pets from "../../../Gen/components/imagenes2/pets.png";
-import gen from "../../../Gen/components/imagenes2/diesel_generator_open.jpg";
-import SelectProducto from "../Landing/seleccionProducto";
+import crops from "../imagenes/az-nuevo.png";
+import pets from "../imagenes/az-nuevo.png";
+import gen from "../imagenes/az-nuevo.png";
 
 import firebase from "firebase";
 import app from "firebase/app";
@@ -277,7 +275,6 @@ class NavigationAuth extends Component {
             <div className='Noti_Ykan'>
               <Image src={logo2} circular style={{ width: 30 }} />
               <p>Y-kan</p>
-              <NotiYkanConsumo />
             </div>
           </Link>
         )
@@ -386,7 +383,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NavigationAuth);
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationAuth);

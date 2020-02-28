@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../Gen/components/Generadores/imagenes/atsurabzaid_circle.png";
+import logo from "../imagenes/az-nuevo.png";
 import { withFirebase } from "../Firebase";
 import * as ROUTES from "../../../rutas/constants-routes";
 import { connect } from "react-redux";
