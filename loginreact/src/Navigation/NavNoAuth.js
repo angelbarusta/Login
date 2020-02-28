@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Menu, Segment } from "semantic-ui-react";
 import Imgperfil from "../Head/img-home/imagen-home";
 
-import "../../App.css";
+import "../App.css";
 
 class NavigationNonAuth extends Component {
   // si el usuario no esta autenticado en az

@@ -10,7 +10,7 @@ import {
   activeItemNavHome,
   activeItemNavLan,
   activeItemNavNoti
-} from "../../../redux/actions/Nav";
+} from "../redux/actions/Nav";
 import logo2 from "../imagenes/az-nuevo.png";
 import { AuthUserContext } from "../Session/index";
 

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../imagenes/az-nuevo.png";
 import { withFirebase } from "../Firebase";
-import * as ROUTES from "../../../rutas/constants-routes";
+import * as ROUTES from "../rutas/constants-routes";
 import { connect } from "react-redux";
-import { vnavNo } from "../../../redux/actions/Nav";
+import { vnavNo } from "../redux/actions/Nav";
 
 import { Button, Icon } from "semantic-ui-react";
 
@@ -21,7 +21,7 @@ const PasswordForgetPage = (props) => (
         color='blue'
         animated
         type='submit'
-        href={ROUTES.LANDING}>
+        href={ROUTES.HOME}>
         <Button.Content visible>
           {" "}
           <Icon name='home' />
