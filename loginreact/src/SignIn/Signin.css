@@ -1,0 +1,27 @@
+.SiginStyl{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background: url("../imagenes2/INNOVA-az4.png") center center / cover no-repeat fixed;
+}
+.Formu{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20em 0em;
+}
+.flexss{
+    flex: 1 0 auto;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+.Inises{
+    font-weight: 100;
+    display: flex !important;
+    justify-content: center !important;
+    margin: auto !important;
+}

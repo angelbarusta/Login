@@ -10,7 +10,7 @@ export default class Login extends Component {
           <div className='column'>
             <h2 className='ui teal image header'>
               <img src={DialogflowLogo} className='image' />
-              <div className='content'>Rasshølinnlogging</div>
+              <div className='content'>Chatbot Assistant</div>
             </h2>
             <form className='ui large form'>
               <div className='ui stacked segment'>
