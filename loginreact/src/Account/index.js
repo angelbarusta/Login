@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "../Generadores/imagenes/atsurabzaid_circle.png";
+import logo from "../imagenes/az-nuevo.png";
 import { AuthUserContext } from "../Session";
 import { PasswordForgetForm } from "../PasswordForget";
 import PasswordChangeForm from "../PasswordChange";

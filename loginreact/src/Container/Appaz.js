@@ -12,7 +12,7 @@ import AccountPage from "../Account"; // importamos el componente container perf
 // import SuccesPay from "../../Eventos/Success";
 
 import * as ROUTES from "../../rutas/constants-routes";
-import Navigation from "../components/Navigation";
+import Navigation from "../Navigation";
 
 import { withAuthentication } from "../../Gen/components/Session";
 
