@@ -22,10 +22,6 @@ import {
 import logo2 from "../imagenes/az-nuevo.png";
 import { AuthUserContext } from "../Session/index";
 
-import crops from "../imagenes/az-nuevo.png";
-import pets from "../imagenes/az-nuevo.png";
-import gen from "../imagenes/az-nuevo.png";
-
 import firebase from "firebase";
 import app from "firebase/app";
 import "firebase/auth";

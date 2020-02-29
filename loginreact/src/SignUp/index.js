@@ -11,7 +11,7 @@ import { Button, Icon } from "semantic-ui-react";
 
 const SignUpPage = (props) => (
   <div
-    style={{ padding: "20px 20px 20px 20px" }}
+    style={{ padding: "20px 20px 20px 20px", paddingTop: 80 }}
     onClick={() => props.vnavNo(false)}>
     <h1>Registrate</h1>
     <SignUpForm />
@@ -34,8 +34,6 @@ const SignUpPage = (props) => (
         </Button.Content>
       </Button>
     </div>
-
-    <Appint />
   </div>
 );
 

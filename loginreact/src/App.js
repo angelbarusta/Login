@@ -11,7 +11,7 @@ function App() {
         <img src={logo} className='App-logo' alt='logo' />
         <h2 style={{ margin: 0 }}>React</h2>
       </header>
-      <Login />
+
       <footer className='piedePag'>footer</footer>
     </div>
   );

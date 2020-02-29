@@ -19,6 +19,7 @@ class NavigationNonAuth extends Component {
         </div>
         <nav className='navbar navbar-light'>
           <a
+            style={{ margin: 10 }}
             href='/signup'
             className='btn btn-primary btn-sm buton-in'
             role='button'

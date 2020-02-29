@@ -130,16 +130,13 @@ class SignInFormBase extends Component {
           </div>
         </div>
 
-        {/* <button type="button" className="btn btn-success" disabled={isInvalid} type="submit">
-          Entra
-        </button>  */}
         <Button
           type='button'
           color='green'
           animated
           type='submit'
           disabled={isInvalid}
-          style={{ padding: 10 }}>
+          style={{ padding: 10, width: "100%" }}>
           <Button.Content visible>
             {" "}
             <Icon name='mail' />
@@ -202,7 +199,7 @@ class SignInGoogleBase extends Component {
           color='red'
           animated
           type='submit'
-          style={{ padding: 10 }}>
+          style={{ padding: 10, width: "100%" }}>
           <Button.Content visible src='../../../imagenes2/go.png'>
             {" "}
             <Icon name='google' />
@@ -263,7 +260,7 @@ class SignInFacebookBase extends Component {
           color='blue'
           animated
           type='submit'
-          style={{ padding: 10 }}>
+          style={{ padding: 10, width: "100%" }}>
           <Button.Content visible src='../../../imagenes2/go.png'>
             {" "}
             <Icon name='facebook' />
