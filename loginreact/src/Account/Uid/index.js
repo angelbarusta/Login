@@ -87,7 +87,7 @@ class PerfilCliente extends Component {
                   <Image
                     circular
                     src={authUser.photoURL}
-                    style={{ width: 70 }}
+                    style={{ width: 40, height: 40 }}
                   />
                 </div>
                 <div className='card-body' style={{ background: "#f7f7f7" }}>

@@ -78,7 +78,11 @@ class AccountPage extends Component {
                   }}>
                   {authUser != null ? (
                     <p>
-                      <Image avatar src={authUser.photoURL} />{" "}
+                      <Image
+                        avatar
+                        src={authUser.photoURL}
+                        style={{ margin: 0 }}
+                      />{" "}
                       {authUser.displayName}
                     </p>
                   ) : (

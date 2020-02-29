@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Menu, Segment, Icon, Image, Dropdown, Popup } from "semantic-ui-react";
+import {
+  Menu,
+  Segment,
+  Icon,
+  Image,
+  Dropdown,
+  Popup,
+  Label
+} from "semantic-ui-react";
 import logo from "../imagenes/az-nuevo.png";
 import SignOutButton from "../SignOut";
 import Imgperfil from "../Head/img-home/imagen-home";
@@ -93,12 +101,6 @@ class NavigationAuth extends Component {
         {(authUser) =>
           authUser.providerData.forEach(function(profile) {
             var user = authUser.uid;
-            // console.log("Sign-in provider: " + profile.providerId);
-            // console.log("  Provider-specific UID: " + profile.uid);
-            // console.log("  Name: " + profile.displayName);
-            // console.log("  Email: " + profile.email);
-            // console.log("  Photo URL: " + profile.photoURL);
-            // console.log("  UID: " + user);
           })
         }
       </AuthUserContext.Consumer>
@@ -145,17 +147,6 @@ class NavigationAuth extends Component {
         ),
         icon: "settings"
       },
-      {
-        key: "shop",
-        text: (
-          <Link
-            to='https://www.paypal.com/cgi-bin/webscr?cmd=_cart&business=atsurabzaid%40gmail%2ecom&display=1'
-            style={{ color: "black" }}>
-            Mi carrito
-          </Link>
-        ),
-        icon: "shop"
-      },
       { key: "sign-out", text: <SignOutButton />, icon: "sign-out" }
     ];
 
@@ -178,7 +169,7 @@ class NavigationAuth extends Component {
             atsurabzaid
           </Link>
         ),
-        icon: <Image src={logo} />
+        icon: <Image circular src={logo} />
       },
       { key: "About", text: "About", icon: "users" },
       { key: "Projects", text: "Projects", icon: "lightbulb outline" },
@@ -213,25 +204,10 @@ class NavigationAuth extends Component {
             role='button'
             to='/ykan'
             onClick={(e) => this.activeItemNavHome(e)}>
-            Y-kan
+            Proyecto 1
           </Link>
         ),
         icon: <Image src={logo2} circular />
-      },
-      {
-        key: "Crops",
-        text: "Crops",
-        icon: <Image src={crops} circular style={{ width: 30, height: 30 }} />
-      },
-      {
-        key: "AZ-Pets",
-        text: "AZ-Pets",
-        icon: <Image src={pets} circular style={{ width: 30, height: 30 }} />
-      },
-      {
-        key: "Gen",
-        text: "Gen",
-        icon: <Image src={gen} circular style={{ width: 30, height: 30 }} />
       }
     ];
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -251,7 +227,7 @@ class NavigationAuth extends Component {
             role='button'
             to='/'
             onClick={(e) => this.activeItemNavNoti(e)}>
-            Notificaciones de compras
+            Notificaciones
           </Link>
         ),
         icon: "payment"
@@ -273,26 +249,18 @@ class NavigationAuth extends Component {
             to={`/home/Ykan/${uid}/${nameUser}`}
             onClick={(e) => this.activeItemNavNoti(e)}>
             <div className='Noti_Ykan'>
-              <Image src={logo2} circular style={{ width: 30 }} />
-              <p>Y-kan</p>
+              <Label
+                circular
+                circular
+                color='red'
+                key='red'
+                style={{ width: 20 }}>
+                1
+              </Label>
+              <p>Nombre Notificacion</p>
             </div>
           </Link>
         )
-      },
-      {
-        key: "Crops",
-        text: "Crops",
-        icon: <Image src={crops} circular style={{ width: 30, height: 30 }} />
-      },
-      {
-        key: "AZ-Pets",
-        text: "AZ-Pets",
-        icon: <Image src={pets} circular style={{ width: 30, height: 30 }} />
-      },
-      {
-        key: "Gen",
-        text: "Gen",
-        icon: <Image src={gen} circular style={{ width: 30, height: 30 }} />
       }
     ];
     ////////////////////////////////////////////////////////////////////////////////////////////////
