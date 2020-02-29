@@ -7,7 +7,7 @@ import Appint from "../App";
 import { connect } from "react-redux";
 import { vnavNo } from "../redux/actions/Nav";
 
-import { Button, Icon } from "semantic-ui-react";
+import { Button, Icon, Popup } from "semantic-ui-react";
 
 const SignUpPage = (props) => (
   <div
@@ -17,22 +17,14 @@ const SignUpPage = (props) => (
     <SignUpForm />
 
     <div style={{ padding: "20px 20px 0px 0px" }}>
-      <Button
-        type='button'
-        color='blue'
-        animated
-        type='submit'
-        href={ROUTES.LANDING}>
-        <Button.Content visible>
-          {" "}
-          <Icon name='home' />
-          Return Home
-        </Button.Content>
-        <Button.Content hidden>
-          <Icon name='home' />
-          <Icon name='sign-in' />
-        </Button.Content>
-      </Button>
+      <Popup
+        content='Regresar a landing principal'
+        trigger={
+          <a href='/'>
+            <Icon circular name='home' />
+          </a>
+        }
+      />
     </div>
   </div>
 );
