@@ -9,9 +9,11 @@
   } */
   
   #reset {
-    width: 75vw;
-    height: 20vh;
-    position: fixed;
+    /* width: 75vw;
+    height: 20vh; */
+    width: 7vw;
+    height: 2vh;
+    /* position: fixed; */
     left: 52%;
     top: 0px;
     margin-left: -400px;
@@ -29,7 +31,10 @@
     margin:0 auto;
     display:block;
 
+    cursor: pointer;
     overflow-y: auto;
+    background: url("../imagenes/dashboard2.png") center center / cover no-repeat fixed;
+
   }
   
   #info {
@@ -74,7 +79,9 @@
   
   #close {
     /* float:right; */
-    margin: 10px;
+    width: 1px;
+    height: 1px;
+    margin: 1px;
     color: transparent;
     background: transparent;
   }
@@ -95,7 +102,7 @@
       
       #c {
         width:100%;
-        height:10vh;
+        height:50vh;
         margin:0 auto;
         display:block;
       }

@@ -13,7 +13,7 @@ class Masa extends Component {
 
     /* Settings */
 
-    var MOUSE_INFLUENCE = 3,
+    var MOUSE_INFLUENCE = 2,
       GRAVITY_X = 0,
       GRAVITY_Y = 0,
       MOUSE_REPEL = true,

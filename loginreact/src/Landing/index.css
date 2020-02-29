@@ -5,7 +5,7 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    background: url("../imagenes/atsurabzaid_logo_remasterizado_negativo_expanfet.png") center center / cover no-repeat fixed;
+    background: url("../imagenes/landing-in.png") center center / cover no-repeat fixed;
 }
 .Formu-Lan{
     display: flex;
@@ -29,11 +29,12 @@
 @media  (max-width:640px) {
     .LoginLanding{
         width: 100%;
+        background: url("../imagenes/white.png") center center / cover no-repeat fixed;
     }
     .Formu-Lan{
         display: block;
         justify-content: center;
         width: 100%;
-        padding: 30em 3em;
+        padding: 10em 0em;
     }
 }
