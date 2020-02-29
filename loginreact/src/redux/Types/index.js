@@ -2,6 +2,8 @@ export const VNAVSI = "VNAVSI";
 export const VNAVNO = "VNAVNO";
 export const DUSER = "DUSER";
 
+export const DATOSTABLA = "DATOSTABLA";
+
 export const PRESION = "PRESION";
 export const TEMPERATURA = "TEMPERATURA";
 export const NOMBRE = "NOMBRE";

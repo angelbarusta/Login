@@ -17,7 +17,8 @@ import {
   Menu,
   Popup,
   Loader,
-  Message
+  Message,
+  Table
 } from "semantic-ui-react";
 
 import { AuthUserContext } from "../Session";
@@ -29,6 +30,8 @@ import firebase from "firebase";
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
+import SearchExampleStandard from "../Components/Search";
+import TableExampleSingleLine from "../Components/Table";
 
 class HomePage extends Component {
   constructor() {
@@ -96,21 +99,6 @@ class HomePage extends Component {
     this.props.dashPets(p);
   };
 
-  handleVerCrops = () => {
-    var p = "vercrops";
-    this.props.dashPets(p);
-    //alert('En desarrollo Crops proximamente!!');
-  };
-  handleVerInd = () => {
-    var p = "verind";
-    this.props.dashPets(p);
-    alert("En desarrollo Ind proximamente!!");
-  };
-  handleVerNuevo = () => {
-    var p = "vernuevo";
-    this.props.dashPets(p);
-    alert("En desarrollo proximamente!!");
-  };
   render() {
     var fch = moment(new Date()).format("YYYY-MM-DD"); // estas seran la fecha de su ultima lectura
     var hch = moment(new Date()).format("HH:mm"); // estas seran la fecha de su ultima lectura
@@ -157,100 +145,9 @@ class HomePage extends Component {
 
           <div className='modas'>
             {DashPets == "item" ? (
-              <div className='gradient-2'>
-                <Card.Group
-                  itemsPerRow={4}
-                  style={{ width: "100%", padding: 10 }}>
-                  <Card onClick={() => this.handleVer()} className='gradient-3'>
-                    <Card.Content className='center_' header='AZ-Pets ' />
-                    <Card.Content className='center_'>
-                      <Card.Description>{userName}</Card.Description>
-                    </Card.Content>
-
-                    <Card.Content
-                      className='center_'
-                      description={
-                        <Link
-                          style={{ borderRadius: "2em" }}
-                          role='button'
-                          className='btn btn-outline-primary btn-sm'
-                          to={`/home/Pets/${uid}/${userName}`}>
-                          Abrir Iot pets{" "}
-                        </Link>
-                      }
-                    />
-                    <Card.Content className='center_' extra>
-                      <Icon name='time' />
-                      {dataf}
-                    </Card.Content>
-                  </Card>
-
-                  <Card
-                    onClick={() => this.handleVerCrops()}
-                    className='gradient-3'>
-                    <Card.Content className='center_' header='AZ-Crops ' />
-                    <AuthUserContext.Consumer>
-                      {(authUser) =>
-                        authUser != null && (
-                          <Card.Content className='center_'>
-                            <Card.Description>{userName}</Card.Description>
-                          </Card.Content>
-                        )
-                      }
-                    </AuthUserContext.Consumer>
-                    <Card.Content
-                      className='center_'
-                      description={
-                        <Link
-                          style={{ borderRadius: "2em" }}
-                          role='button'
-                          className='btn btn-outline-primary btn-sm'
-                          to={`/home/Crops/${uid}/${userName}`}>
-                          Abrir Iot crops{" "}
-                        </Link>
-                      }
-                    />
-                    <Card.Content className='center_' extra>
-                      <Icon name='time' />
-                      {dataf}
-                    </Card.Content>
-                  </Card>
-
-                  <Card onClick={() => this.handleVer()} className='gradient-3'>
-                    <Card.Content className='center_' header='AZ-Ykan ' />
-                    <Card.Content className='center_'>
-                      <Card.Description>{userName}</Card.Description>
-                    </Card.Content>
-
-                    <Card.Content
-                      className='center_'
-                      description={
-                        <Link
-                          style={{ borderRadius: "2em" }}
-                          role='button'
-                          className='btn btn-outline-primary btn-sm'
-                          to={`/home/Ykan/${uid}/${userName}`}>
-                          Abrir Iot Ykan{" "}
-                        </Link>
-                      }
-                    />
-                    <Card.Content className='center_' extra>
-                      <Icon name='time' />
-                      {dataf}
-                    </Card.Content>
-                  </Card>
-
-                  <Card
-                    onClick={() => this.handleVerInd()}
-                    className='gradient-3'>
-                    <Card.Content className='center_' header='AZ-Ind' />
-                    <Card.Content className='center_' description={"dash-3"} />
-                    <Card.Content className='center_' extra>
-                      <Icon name='time' />
-                      {dataf}
-                    </Card.Content>
-                  </Card>
-                </Card.Group>
+              <div>
+                <SearchExampleStandard />
+                <TableExampleSingleLine />
               </div>
             ) : (
               <div className='gradient-2' onClick={() => this.handleNoVer()}>
@@ -288,6 +185,7 @@ const condition = (authUser) => !!authUser;
 const mapStateToProps = (state) => {
   return {
     nav: state.Nav.nav,
+    datostabla: state.User.datostabla,
     DashPets: state.Nav.dashPets
   };
 };
