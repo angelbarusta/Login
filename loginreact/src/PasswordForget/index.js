@@ -6,41 +6,38 @@ import * as ROUTES from "../rutas/constants-routes";
 import { connect } from "react-redux";
 import { vnavNo } from "../redux/actions/Nav";
 
-import { Button, Icon } from "semantic-ui-react";
+import { Button, Icon, Popup } from "semantic-ui-react";
+import "./index.css";
+import Masa from "../Animaciones/masa";
 
 const PasswordForgetPage = (props) => (
-  <div
-    style={{ padding: "0px 20px 0px 20px" }}
-    onClick={() => props.vnavNo(false)}>
-    <h1>Restablecer contraseña</h1>
-    <p>Ingrese la cuenta para recuperar su contraseña</p>
-    <PasswordForgetForm />
-    <div style={{ padding: "20px 20px 0px 0px" }}>
-      <Button
-        type='button'
-        color='blue'
-        animated
-        type='submit'
-        href={ROUTES.HOME}>
-        <Button.Content visible>
-          {" "}
-          <Icon name='home' />
-          Return Home
-        </Button.Content>
-        <Button.Content hidden>
-          <Icon name='home' />
-          <Icon name='sign-in' />
-        </Button.Content>
-      </Button>
+  <div className='recuContrase' onClick={() => props.vnavNo(false)}>
+    <div>
+      <h1>Restablecer contraseña</h1>
+      <p>Ingrese la cuenta para recuperar su contraseña</p>
+      <PasswordForgetForm />
+      <div style={{ padding: "20px 20px 0px 0px" }}>
+        <div style={{ padding: "20px 20px 0px 0px" }}>
+          <Popup
+            content='Regresar a landing principal'
+            trigger={
+              <a href='/'>
+                <Icon circular name='home' />
+              </a>
+            }
+          />
+        </div>
+      </div>
+      <div className='App container'>
+        <img
+          src={logo}
+          className='App-logo'
+          alt='logo'
+          style={{ maxWidth: "100px", maxHeight: "100px" }}
+        />
+      </div>
     </div>
-    <div className='App container'>
-      <img
-        src={logo}
-        className='App-logo'
-        alt='logo'
-        style={{ maxWidth: "100px", maxHeight: "100px" }}
-      />
-    </div>
+    <Masa className='SiginStyl' />
   </div>
 );
 
@@ -81,32 +78,35 @@ class PasswordForgetFormBase extends Component {
     const isInvalid = email === "";
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <div className='form-row'>
-          <div style={{ width: "100%" }}>
-            <label for='validationTooltip07'>Email</label>
-            <input
-              className='form-control'
-              id='validationTooltip07'
-              name='email'
-              value={this.state.email}
-              onChange={this.onChange}
-              type='text'
-              placeholder='Email Address'
-            />
+      <div className='fomrForget'>
+        <form onSubmit={this.onSubmit}>
+          <div className='form-row'>
+            <div style={{ width: "100%" }}>
+              <label for='validationTooltip07'>Email</label>
+              <input
+                className='form-control'
+                id='validationTooltip07'
+                name='email'
+                value={this.state.email}
+                onChange={this.onChange}
+                type='text'
+                placeholder='Email Address'
+              />
+            </div>
           </div>
-        </div>
 
-        <button
-          type='button'
-          className='btn btn-success'
-          disabled={isInvalid}
-          type='submit'>
-          Reset My Email
-        </button>
+          <button
+            style={{ marginTop: 10 }}
+            type='button'
+            className='btn btn-success'
+            disabled={isInvalid}
+            type='submit'>
+            Reset My Email
+          </button>
 
-        {error && <p>{error.message}</p>}
-      </form>
+          {error && <p>{error.message}</p>}
+        </form>
+      </div>
     );
   }
 }
