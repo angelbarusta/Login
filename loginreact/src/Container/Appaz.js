@@ -20,6 +20,7 @@ import PerfilCliente from "../Account/Uid";
 
 import { AuthUserContext } from "../Session";
 import { Transition, Divider, Button, Menu } from "semantic-ui-react";
+import Landing from "../Landing";
 
 class Appaz extends Component {
   state = { visible: true };
@@ -55,7 +56,7 @@ class Appaz extends Component {
               <Navigation />
             </div>
           )}
-
+          <Route exact path={ROUTES.LANDING} component={Landing} />
           <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
           <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
           <Route
