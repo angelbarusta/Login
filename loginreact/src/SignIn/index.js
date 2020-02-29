@@ -76,7 +76,7 @@ class SignInFormBase extends Component {
       // .doSignInWithGoogle()
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.LANDING);
       })
       .catch((error) => {
         this.setState({ error });
@@ -169,7 +169,7 @@ class SignInGoogleBase extends Component {
       .doSignInWithGoogle()
       .then(() => {
         this.setState({ error: null });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.LANDING);
       })
       .catch((error) => {
         this.setState({ error });
@@ -240,11 +240,11 @@ class SignInFacebookBase extends Component {
       })
       .then((socialAuthUser) => {
         this.setState({ error: null });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.LANDING);
       })
       .catch((error) => {
         this.setState({ error });
-        this.props.history.push(ROUTES.HOME);
+        this.props.history.push(ROUTES.LANDING);
       });
 
     event.preventDefault();

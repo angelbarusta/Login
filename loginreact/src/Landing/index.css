@@ -25,6 +25,11 @@
     justify-content: center !important;
     margin: auto !important;
 }
+.ImaLanding{
+    min-width: 180px;
+    width: 400px;
+   padding-top: 100px;
+}
 
 @media  (max-width:640px) {
     .LoginLanding{
@@ -36,5 +41,10 @@
         justify-content: center;
         width: 100%;
         padding: 10em 0em;
+    }
+    .ImaLanding{
+        min-width: 100px;
+        max-width: 200px;
+       padding-top: 100px;
     }
 }

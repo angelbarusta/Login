@@ -11,6 +11,7 @@ import Masa from "../Animaciones/masa";
 import { AuthUserContext } from "../Session";
 
 import linechart from "../imagenes/linechart.png";
+import SignOut from "../SignOut";
 
 const Landing = (props) => {
   return (
@@ -62,19 +63,26 @@ const Landing = (props) => {
                     </h1>
                   </div>
                   <List items={["Apples", "Pears", "Oranges"]} />
-                  <div style={{ padding: "20px 20px 0px 0px" }}>
+
+                  <div
+                    style={{ padding: "20px 20px 0px 0px", cursor: "pointer" }}>
                     <Popup
                       content='Mostrar tablas'
                       trigger={
                         <a href='/home'>
-                          <Icon circular name='table' />
+                          <Image src={linechart} className='ImaLanding' />
                         </a>
                       }
                     />
-                    <Image
-                      src={linechart}
-                      style={{ width: 200, paddingTop: 100 }}
-                    />
+                    {/* <Popup
+                      style={{ paddingTop: 40 }}
+                      content='Salir de la cuenta'
+                      trigger={
+                        <a role='button'>
+                          <SignOut />
+                        </a>
+                      }
+                    /> */}
                   </div>
                 </div>
               </div>

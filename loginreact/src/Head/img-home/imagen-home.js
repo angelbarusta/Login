@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import user from "../../imagenes/dialflow.png";
+import user from "../../imagenes/az-nuevo.png";
 import "./imagen-home.scss";
 import { vnavSi } from "../../redux/actions/Nav";
 import { connect } from "react-redux";
@@ -25,7 +25,11 @@ class Imgperfil extends Component {
       var ima = (
         <AuthUserContext.Consumer>
           {(authUser) =>
-            authUser != null && <img src={authUser.photoURL} alt='Skytsunami' />
+            authUser != null ? (
+              <img src={authUser.photoURL} alt='Skytsunami' />
+            ) : (
+              <img src={user} alt='Skytsunami' />
+            )
           }
         </AuthUserContext.Consumer>
       );
