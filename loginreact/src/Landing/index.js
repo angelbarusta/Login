@@ -39,9 +39,7 @@ const Landing = (props) => {
             </div>
           </div>
         </Card>
-        <Card>
-          <Masa />
-        </Card>
+        <Masa />
       </div>
     </div>
   );

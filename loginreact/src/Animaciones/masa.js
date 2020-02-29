@@ -326,33 +326,15 @@ class Masa extends Component {
         <canvas href='c' id='c'>
           {" "}
         </canvas>
-        <button href='reset' id='reset'>
+        <p href='reset' id='reset'>
           new colours
-        </button>
+        </p>
         <div href='info' id='info'>
           <div href='top' id='top'>
-            <a href='close' id='close'>
+            <p href='close' id='close'>
               close
-            </a>
+            </p>
           </div>
-          <p>
-            <br />
-            - Alter particles/groups with the GROUPS variable.
-            <br />
-            <br />
-            - Customize colours with GROUP_COLOURS.
-            <br />
-            <br />
-            - Use the mouse to move the fluid.
-            <br />
-            <br />
-            - Click anywhere to make water.
-            <br />
-            <br />
-            - Use one group for a more water-like effect.
-            <br />
-            <br />
-          </p>
         </div>
       </div>
     );
