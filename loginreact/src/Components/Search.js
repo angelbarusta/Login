@@ -3,7 +3,7 @@ import faker from "faker";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Search, Grid, Header, Segment } from "semantic-ui-react";
-import { datosTabla } from "../redux/actions/User";
+import { datosTabla, SelectdatosTabla } from "../redux/actions/User";
 
 const initialState = { isLoading: false, results: [], value: "" };
 
@@ -20,18 +20,20 @@ class SearchExampleStandard extends Component {
   state = initialState;
 
   handleResultSelect = (e, { result }) => {
-    const source = this.props.datostabla;
+    // const source = this.props.datostabla;
     this.setState({ value: result.title });
-    var datos = JSON.stringify(source, null, 2);
-    this.props.datosTabla(datos);
+    var datos = this.state.results;
+    this.props.SelectdatosTabla(datos);
   };
 
   handleSearchChange = (e, { value }) => {
+    var datos = this.state.results;
+    this.props.SelectdatosTabla(datos);
     const source = this.props.datostabla;
     this.setState({ isLoading: true, value });
 
     setTimeout(() => {
-      if (this.state.value.length < 1) return this.setState(initialState);
+      if (this.state.value.length < -1) return this.setState(initialState);
 
       const re = new RegExp(_.escapeRegExp(this.state.value), "i");
       const isMatch = (result) => re.test(result.title);
@@ -45,7 +47,13 @@ class SearchExampleStandard extends Component {
 
   render() {
     const source = this.props.datosTabla;
+    const { selectdatos } = this.props;
+
     const { isLoading, value, results } = this.state;
+
+    const cuerpo = selectdatos.map((s, i) => {
+      return <div>{s.title}</div>;
+    });
 
     return (
       <Grid>
@@ -70,7 +78,11 @@ class SearchExampleStandard extends Component {
             </pre>
             <Header>Options</Header>
             <pre style={{ overflowX: "auto" }}>
-              {JSON.stringify(source, null, 2)}
+              {selectdatos != null || selectdatos != undefined ? (
+                <div>{cuerpo}</div>
+              ) : (
+                <div>MAL</div>
+              )}
             </pre>
           </Segment>
         </Grid.Column>
@@ -79,12 +91,18 @@ class SearchExampleStandard extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  return { datostabla: state.User.datostabla };
+  return {
+    datostabla: state.User.datostabla,
+    selectdatos: state.User.selectdatos
+  };
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     datosTabla(datos) {
       dispatch(datosTabla(datos));
+    },
+    SelectdatosTabla(datos) {
+      dispatch(SelectdatosTabla(datos));
     }
   };
 };

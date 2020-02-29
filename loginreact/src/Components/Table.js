@@ -45,7 +45,8 @@ class TableExampleSingleLine extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    datostabla: state.User.datostabla
+    datostabla: state.User.datostabla,
+    selectdatos: state.User.selectdatos
   };
 };
 export default connect(mapStateToProps)(TableExampleSingleLine);

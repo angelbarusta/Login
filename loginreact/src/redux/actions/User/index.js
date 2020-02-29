@@ -14,3 +14,10 @@ export const datosTabla = (datos) => {
     datos
   };
 };
+export const SelectdatosTabla = (datos) => {
+  console.log("SELECTDATOS", datos);
+  return {
+    type: types.SELECTDATOSTABLA,
+    datos
+  };
+};

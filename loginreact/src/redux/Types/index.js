@@ -3,6 +3,7 @@ export const VNAVNO = "VNAVNO";
 export const DUSER = "DUSER";
 
 export const DATOSTABLA = "DATOSTABLA";
+export const SELECTDATOSTABLA = "SELECTDATOSTABLA";
 
 export const PRESION = "PRESION";
 export const TEMPERATURA = "TEMPERATURA";

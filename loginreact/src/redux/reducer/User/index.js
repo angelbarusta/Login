@@ -14,7 +14,8 @@ const source = _.times(5, () => ({
 
 const initialState = {
   user: {},
-  datostabla: source
+  datostabla: source,
+  selectdatos: source
 };
 
 const reducer = (state = initialState, action) => {
@@ -29,6 +30,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         datostabla: action.datos
+      };
+    case types.SELECTDATOSTABLA:
+      return {
+        ...state,
+        selectdatos: action.datos
       };
     default:
       return state;
