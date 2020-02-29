@@ -9,7 +9,7 @@
 }
 .Formu-Lan{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     padding: 20em 1em;
 }

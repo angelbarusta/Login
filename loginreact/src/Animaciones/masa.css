@@ -9,15 +9,17 @@
   } */
   
   #reset {
-    position: absolute;
-    left:50%;
-    top:10px;
-    margin-left:-400px;
+    width: 75vw;
+    height: 20vh;
+    position: fixed;
+    left: 52%;
+    top: 0px;
+    margin-left: -400px;
     background: transparent;
     /* border: 1px solid #555; */
     color: transparent;
     padding: 6px 10px;
-    cursor: pointer;
+    /* cursor: pointer; */
     opacity: 0.8;
   }
   
@@ -69,8 +71,10 @@
   }
   
   #close {
-    float:right;
+    /* float:right; */
     margin: 10px;
+    color: transparent;
+    background: transparent;
   }
 
   @media (max-width:654px){

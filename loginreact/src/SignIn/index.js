@@ -47,10 +47,6 @@ const SignInPage = (props) => (
             />
           </div>
         </div>
-
-        {/* <Grid.Column verticalAlign='middle'>
-     <Portada />
-  </Grid.Column> */}
       </Card>
     </div>
 

@@ -15,7 +15,7 @@ const Landing = (props) => {
       {/* <Fondo style={{maxHeight:50,maxWidth:'100%'}}/> */}
 
       <div className='Formu-Lan '>
-        <Card className='LoginLanding' stackable style={{ padding: 20 }}>
+        <div className='LoginLanding' stackable style={{ padding: 20 }}>
           <div>
             <div>
               <h1 className='Inises-Lan'>Inicia sesión</h1>
@@ -38,7 +38,7 @@ const Landing = (props) => {
               />
             </div>
           </div>
-        </Card>
+        </div>
         <Masa />
       </div>
     </div>
