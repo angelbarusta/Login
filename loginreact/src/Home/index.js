@@ -125,7 +125,7 @@ class HomePage extends Component {
           <div style={{ color: "rgb(214, 228, 206)", position: "fixed" }}>
             <AuthUserContext.Consumer>
               {(authUser) => (
-                <div style={{ padding: "20px 20px 20px 0px" }}>
+                <div style={{ padding: "100px 20px 20px 10px" }}>
                   <p style={{ fontSize: 30 }}>
                     <Image avatar src={authUser.photoURL} />{" "}
                     {authUser.displayName}

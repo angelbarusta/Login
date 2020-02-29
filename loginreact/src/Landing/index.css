@@ -1,0 +1,39 @@
+.SiginStyl-Lan{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    background: url("../imagenes/atsurabzaid_logo_remasterizado_negativo_expanfet.png") center center / cover no-repeat fixed;
+}
+.Formu-Lan{
+    display: block;
+    justify-content: center;
+    width: 100%;
+    padding: 20em 5em;
+}
+.flexss-Lan{
+    flex: 1 0 auto;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: auto;
+}
+.Inises-Lan{
+    font-weight: 100;
+    display: flex !important;
+    justify-content: center !important;
+    margin: auto !important;
+}
+
+@media  (max-width:640px) {
+    .LoginLanding{
+        width: 100%;
+    }
+    .Formu-Lan{
+        display: block;
+        justify-content: center;
+        width: 100%;
+        padding: 30em 3em;
+    }
+}
