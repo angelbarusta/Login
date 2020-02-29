@@ -2,7 +2,16 @@ import _ from "lodash";
 import faker from "faker";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Search, Grid, Header, Segment } from "semantic-ui-react";
+import {
+  Search,
+  Grid,
+  Header,
+  Segment,
+  Table,
+  Card,
+  Image,
+  Icon
+} from "semantic-ui-react";
 import { datosTabla, SelectdatosTabla } from "../redux/actions/User";
 
 const initialState = { isLoading: false, results: [], value: "" };
@@ -52,7 +61,23 @@ class SearchExampleStandard extends Component {
     const { isLoading, value, results } = this.state;
 
     const cuerpo = selectdatos.map((s, i) => {
-      return <div>{s.title}</div>;
+      return (
+        <Card>
+          <Image floated='right' src={s.image} wrapped ui={false} size='mini' />
+          <Card.Content>
+            <Card.Header>{s.title}</Card.Header>
+            <Card.Meta>Email:{s.email}</Card.Meta>
+            <Card.Meta>uuid:{s.uuid}</Card.Meta>
+            <Card.Description>Work{s.description}</Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <a>
+              <Icon name='user' />
+              {s.friends} Friends
+            </a>
+          </Card.Content>
+        </Card>
+      );
     });
 
     return (
@@ -72,18 +97,18 @@ class SearchExampleStandard extends Component {
         </Grid.Column>
         <Grid.Column width={10}>
           <Segment>
-            <Header>State</Header>
+            {/* <Header>State</Header>
             <pre style={{ overflowX: "auto" }}>
               {JSON.stringify(this.state, null, 2)}
-            </pre>
-            <Header>Options</Header>
-            <pre style={{ overflowX: "auto" }}>
+            </pre> */}
+            <Header>Cliente</Header>
+            <div style={{ overflowX: "auto" }}>
               {selectdatos != null || selectdatos != undefined ? (
-                <div>{cuerpo}</div>
+                <Card.Group>{cuerpo}</Card.Group>
               ) : (
                 <div>MAL</div>
               )}
-            </pre>
+            </div>
           </Segment>
         </Grid.Column>
       </Grid>

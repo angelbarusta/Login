@@ -9,7 +9,8 @@ const source = _.times(5, () => ({
   description: faker.company.catchPhrase(),
   uuid: faker.random.uuid(),
   image: faker.image.avatar(),
-  price: faker.finance.amount(0, 100, 2, "$")
+  price: faker.finance.amount(0, 100, 2, "$"),
+  friends: faker.random.number()
 }));
 
 const initialState = {
