@@ -39,7 +39,7 @@ const Landing = (props) => {
             </div>
           </div>
         </div>
-        <Masa />
+        <Masa className='SiginStyl' />
       </div>
     </div>
   );

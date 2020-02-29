@@ -24,10 +24,12 @@
   }
   
   #c {
-    width:800px;
+    width:100%;
     height:100vh;
     margin:0 auto;
     display:block;
+
+    overflow-y: auto;
   }
   
   #info {

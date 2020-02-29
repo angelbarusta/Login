@@ -13,12 +13,13 @@ class Masa extends Component {
 
     /* Settings */
 
-    var MOUSE_INFLUENCE = 5,
+    var MOUSE_INFLUENCE = 3,
       GRAVITY_X = 0,
       GRAVITY_Y = 0,
-      MOUSE_REPEL = false,
-      GROUPS = [50, 50, 50],
-      GROUP_COLOURS = ["rgba(97,160,232"];
+      MOUSE_REPEL = true,
+      GROUPS = [200, 10, 10],
+      GROUP_COLOURS = ["rgba(83, 200, 210"];
+    //GROUP_COLOURS = ["rgba(97,160,232"]; //83, 200, 210
 
     window.requestAnimationFrame =
       window.requestAnimationFrame ||
@@ -263,12 +264,12 @@ class Masa extends Component {
           }
 
           canvas.onmousedown = function(e) {
-            mouse.down = true;
+            mouse.down = false;
             return false;
           };
 
           canvas.onmouseup = function(e) {
-            mouse.down = false;
+            mouse.down = true;
             return false;
           };
 

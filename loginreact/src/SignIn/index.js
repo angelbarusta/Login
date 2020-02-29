@@ -255,7 +255,9 @@ class SignInFacebookBase extends Component {
     const { error } = this.state;
 
     return (
-      <form onSubmit={this.onSubmit} style={{ padding: "10px 0px 10px 0px" }}>
+      <form
+        onSubmit={this.onSubmit}
+        style={{ padding: "10px 0px 10px 0px", width: "100%" }}>
         <Button
           basic
           color='blue'
