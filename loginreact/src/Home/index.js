@@ -89,7 +89,6 @@ class HomePage extends Component {
 
   navi = () => {
     this.props.vnavNo(false);
-    setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
   };
 
   handleVer = () => {
@@ -99,10 +98,6 @@ class HomePage extends Component {
   handleNoVer = () => {
     var p = "item";
     this.props.dashPets(p);
-  };
-
-  muestraReloj = () => {
-    var timeR = moment(new Date()).format("DD/MM/YYYY | HH:mm:ss");
   };
 
   render() {
