@@ -1,5 +1,6 @@
 .TablaGeneral{
     padding: 10em;
+    /* position: absolute; */
 }
 
 @media (max-width:650px){

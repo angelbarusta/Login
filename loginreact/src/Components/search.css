@@ -2,21 +2,34 @@
 
 .AvatarSelect{
     width: 100%; 
-    display: flex;
+    
 }
 .perfiles{
     overflow-x: auto;
     height: 40vh;
     width: 100vw;
+    
 }
-@media (max-width:650){
+.Cartas{
+    padding-top: 110px !important;
+    margin: auto !important;
+    width: 50% !important;
+    border-radius: 20px !important;
+}
+@media (max-width:650px){
     .AvatarSelect{
-        overflow-x: auto 
+        overflow-x: auto ;
     }
     .perfiles{
         overflow-x: auto;
+        display: flex !important;
+        height: 40vh;
         width: 100vw;
-        height: 45vh;
-        display: flex;
+    }
+    .Cartas{
+        padding-top: 110px !important;
+        margin: auto !important;
+        width: 70% !important;
+        border-radius: 20px !important;
     }
 }

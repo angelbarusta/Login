@@ -20,7 +20,7 @@ class TableExampleSingleLine extends Component {
     });
 
     return (
-      <Table singleLine className='TablaGeneral'>
+      <Table singleLine className='TablaGeneral' celled>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>

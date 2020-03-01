@@ -66,7 +66,7 @@ class SearchExampleStandard extends Component {
       return (
         <div>
           <hr />
-          <Card style={{ paddingTop: 110, margin: "auto", width: "50%" }}>
+          <Card className='Cartas'>
             <div style={{ width: 500 }}>
               <Image circular floated='center' src={s.image} size='tiny' />
             </div>
