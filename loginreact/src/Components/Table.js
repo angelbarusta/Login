@@ -41,6 +41,7 @@ class TableExampleSingleLine extends Component {
             </Table.Row>
           </Table.Body>
         )}
+
         <Table.Footer>
           <Table.Row>
             <Table.HeaderCell colSpan='3'>

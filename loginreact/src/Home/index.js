@@ -32,6 +32,7 @@ import "firebase/auth";
 import "firebase/database";
 import SearchExampleStandard from "../Components/Search";
 import TableExampleSingleLine from "../Components/Table";
+import TablaEdit from "../Components/Tabla2.js";
 
 class HomePage extends Component {
   constructor() {
@@ -155,6 +156,7 @@ class HomePage extends Component {
             {DashPets == "item" ? (
               <div>
                 <SearchExampleStandard />
+                <TablaEdit />
                 <TableExampleSingleLine />
               </div>
             ) : (
