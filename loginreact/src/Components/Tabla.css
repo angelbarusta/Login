@@ -8,5 +8,7 @@
     .TablaGeneral{
         padding: 0em;
         overflow-x: auto;
+    }::-webkit-scrollbar {
+        display: none;
     }
 }
