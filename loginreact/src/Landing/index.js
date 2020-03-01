@@ -16,8 +16,6 @@ import SignOut from "../SignOut";
 const Landing = (props) => {
   return (
     <div onClick={() => props.vnavNo(false)} className='SiginStyl'>
-      {/* <Fondo style={{maxHeight:50,maxWidth:'100%'}}/> */}
-
       <AuthUserContext.Consumer>
         {(authUser) =>
           authUser == null && (
@@ -74,19 +72,13 @@ const Landing = (props) => {
                         </a>
                       }
                     />
-                    {/* <Popup
-                      style={{ paddingTop: 40 }}
-                      content='Salir de la cuenta'
-                      trigger={
-                        <a role='button'>
-                          <SignOut />
-                        </a>
-                      }
-                    /> */}
                   </div>
                 </div>
               </div>
               <Masa className='SiginStyl' />
+              <div style={{ padding: "20px 20px 0px 0px", cursor: "pointer" }}>
+                <SignOut />
+              </div>
             </div>
           )
         }

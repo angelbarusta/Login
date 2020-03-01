@@ -29,6 +29,9 @@ import "firebase/database";
 import { Link } from "react-router-dom";
 import "./navigation.css";
 
+import _ from "lodash";
+import faker from "faker";
+
 class NavigationAuth extends Component {
   // si el usuario esta autenticado en az
   constructor() {
@@ -91,6 +94,10 @@ class NavigationAuth extends Component {
   };
 
   render() {
+    const sourcePh = _.times(1, () => ({
+      imagePerfil: faker.image.animals()
+    }));
+
     var { nameUser, uid } = this.state;
     const dataClient = (
       <AuthUserContext.Consumer>
@@ -121,7 +128,19 @@ class NavigationAuth extends Component {
         <AuthUserContext.Consumer>
           {(authUser) => (
             <h1 style={{ fontSize: 10, color: `${this.state.colores}` }}>
-              <Image avatar src={authUser.photoURL} /> {authUser.displayName}
+              {authUser.photoURL != null ||
+              authUser.photoURL != undefined ||
+              authUser.photoURL != "" ? (
+                <div>
+                  <Image avatar src={authUser.photoURL} />
+                  {authUser.displayName}
+                </div>
+              ) : (
+                <div>
+                  <Image avatar src={sourcePh.imagePerfil} />
+                  {authUser.displayName}
+                </div>
+              )}
             </h1>
           )}
         </AuthUserContext.Consumer>
