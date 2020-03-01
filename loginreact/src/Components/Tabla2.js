@@ -29,11 +29,14 @@ class TablaEdit extends Component {
               new Promise((resolve) => {
                 setTimeout(() => {
                   resolve();
-                  this.setState((prevState) => {
-                    const data = [...prevState.data];
-                    data.push(newData);
-                    return { ...prevState, data };
-                  });
+                  const datos = datostabla;
+                  datos.push(newData);
+                  this.props.datosTabla(datos);
+                  //   this.setState((prevState) => {
+                  //     const data = [...prevState.data];
+                  //     data.push(newData);
+                  //     return { ...prevState, data };
+                  //   });
                 }, 600);
               }),
             onRowUpdate: (newData, oldData) =>
@@ -72,4 +75,13 @@ const mapStateToProps = (state) => {
     selectdatos: state.User.selectdatos
   };
 };
-export default connect(mapStateToProps)(TablaEdit);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    datosTabla(datos) {
+      dispatch(datosTabla(datos));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TablaEdit);
