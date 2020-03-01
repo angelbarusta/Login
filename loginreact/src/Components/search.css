@@ -3,10 +3,11 @@
 .AvatarSelect{
     width: 100%; 
     
+    
 }
 .perfiles{
     overflow-x: auto;
-    height: 40vh;
+    height: 50vh;
     width: 100vw;
     
 }
@@ -19,6 +20,7 @@
 @media (max-width:650px){
     .AvatarSelect{
         overflow-x: auto ;
+       
     }
     .perfiles{
         overflow-x: auto;

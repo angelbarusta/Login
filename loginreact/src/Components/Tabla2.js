@@ -19,49 +19,50 @@ class TablaEdit extends Component {
     const { datostabla } = this.props;
     console.log("TABLA2", datostabla);
     return (
-      <MaterialTable
-        className='TablaGeneral'
-        title='Clientes'
-        columns={state.columns}
-        data={datostabla}
-        editable={{
-          onRowAdd: (newData) =>
-            new Promise((resolve) => {
-              setTimeout(() => {
-                resolve();
-                this.setState((prevState) => {
-                  const data = [...prevState.data];
-                  data.push(newData);
-                  return { ...prevState, data };
-                });
-              }, 600);
-            }),
-          onRowUpdate: (newData, oldData) =>
-            new Promise((resolve) => {
-              setTimeout(() => {
-                resolve();
-                if (oldData) {
+      <div className='TablaGeneral'>
+        <MaterialTable
+          title='Clientes'
+          columns={state.columns}
+          data={datostabla}
+          editable={{
+            onRowAdd: (newData) =>
+              new Promise((resolve) => {
+                setTimeout(() => {
+                  resolve();
                   this.setState((prevState) => {
                     const data = [...prevState.data];
-                    data[data.indexOf(oldData)] = newData;
+                    data.push(newData);
                     return { ...prevState, data };
                   });
-                }
-              }, 600);
-            }),
-          onRowDelete: (oldData) =>
-            new Promise((resolve) => {
-              setTimeout(() => {
-                resolve();
-                this.setState((prevState) => {
-                  const data = [...prevState.data];
-                  data.splice(data.indexOf(oldData), 1);
-                  return { ...prevState, data };
-                });
-              }, 600);
-            })
-        }}
-      />
+                }, 600);
+              }),
+            onRowUpdate: (newData, oldData) =>
+              new Promise((resolve) => {
+                setTimeout(() => {
+                  resolve();
+                  if (oldData) {
+                    this.setState((prevState) => {
+                      const data = [...prevState.data];
+                      data[data.indexOf(oldData)] = newData;
+                      return { ...prevState, data };
+                    });
+                  }
+                }, 600);
+              }),
+            onRowDelete: (oldData) =>
+              new Promise((resolve) => {
+                setTimeout(() => {
+                  resolve();
+                  this.setState((prevState) => {
+                    const data = [...prevState.data];
+                    data.splice(data.indexOf(oldData), 1);
+                    return { ...prevState, data };
+                  });
+                }, 600);
+              })
+          }}
+        />
+      </div>
     );
   }
 }

@@ -153,36 +153,11 @@ class HomePage extends Component {
           </div>
 
           <div className='modas'>
-            {DashPets == "item" ? (
-              <div>
-                <SearchExampleStandard />
-                <TablaEdit />
-                {/* <TableExampleSingleLine /> */}
-              </div>
-            ) : (
-              <div className='gradient-2' onClick={() => this.handleNoVer()}>
-                <Card className='gradient-3'>
-                  <Card.Content header={`Proyectos de ${userName}`} />
-                  <Card.Content
-                    description={
-                      <Icon
-                        name='sitemap'
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          margin: "auto"
-                        }}
-                      />
-                    }
-                  />
-                  <Card.Content extra>
-                    <Loader active inline='centered' />
-                    <Icon name='time' />
-                    {dataf}
-                  </Card.Content>
-                </Card>
-              </div>
-            )}
+            <div>
+              <SearchExampleStandard />
+              <TablaEdit />
+              {/* <TableExampleSingleLine /> */}
+            </div>
           </div>
         </div>
       </div>

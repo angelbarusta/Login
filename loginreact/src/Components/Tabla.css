@@ -1,10 +1,12 @@
 .TablaGeneral{
     padding: 10em;
+    
     /* position: absolute; */
 }
 
 @media (max-width:650px){
     .TablaGeneral{
         padding: 0em;
+        overflow-x: auto;
     }
 }

@@ -4,7 +4,7 @@ import _ from "lodash";
 import faker from "faker";
 import moment from "moment";
 
-const source = _.times(10, () => ({
+const source = _.times(100, () => ({
   title: faker.name.findName(),
   email: faker.internet.email(),
   description: faker.company.catchPhrase(),
