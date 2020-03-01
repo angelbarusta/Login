@@ -12,11 +12,17 @@ import {
   Image,
   Icon
 } from "semantic-ui-react";
+import moment from "moment";
 import { datosTabla, SelectdatosTabla } from "../redux/actions/User";
 
 import "./search.css";
 
-const initialState = { isLoading: false, results: [], value: "" };
+const initialState = {
+  isLoading: false,
+  results: [],
+  value: "",
+  timeS: moment(new Date()).format("DD/MM/YYYY | HH:mm:ss")
+};
 
 // const source = _.times(5, () => ({
 //   title: faker.name.findName(),
@@ -29,7 +35,9 @@ const initialState = { isLoading: false, results: [], value: "" };
 
 class SearchExampleStandard extends Component {
   state = initialState;
-
+  componentWillUpdate() {
+    setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
+  }
   handleResultSelect = (e, { result }) => {
     // const source = this.props.datostabla;
     this.setState({ value: result.title });
@@ -56,6 +64,14 @@ class SearchExampleStandard extends Component {
     }, 300);
   };
 
+  muestraReloj = () => {
+    var timeR = moment(new Date()).format("DD/MM/YYYY | HH:mm:ss");
+    this.setState({ timeS: timeR });
+  };
+  handleClik = () => {
+    setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
+  };
+
   render() {
     const source = this.props.datosTabla;
     const { selectdatos } = this.props;
@@ -64,8 +80,9 @@ class SearchExampleStandard extends Component {
 
     const cuerpo = selectdatos.map((s, i) => {
       return (
-        <div>
+        <div onClick={(e) => this.handleClik(e)}>
           <hr />
+          <p style={{ color: "transparent" }}>{this.state.timeS}</p>
           <Card className='Cartas'>
             <div style={{ width: 500 }}>
               <Image circular floated='center' src={s.image} size='tiny' />

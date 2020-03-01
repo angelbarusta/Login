@@ -65,7 +65,7 @@ class TablaEdit extends Component {
                     console.log("EDIT", newData);
                     console.log("POSI", pos + 1);
                   }
-                }, 6000);
+                }, 600);
               }),
             onRowDelete: (oldData) =>
               new Promise((resolve) => {
