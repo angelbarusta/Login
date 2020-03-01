@@ -2,9 +2,8 @@ import * as types from "../../Types";
 
 import _ from "lodash";
 import faker from "faker";
-import moment from "moment";
 
-const source = _.times(200, () => ({
+const source = _.times(2, () => ({
   title: faker.name.findName(),
   email: faker.internet.email(),
   description: faker.company.catchPhrase(),
