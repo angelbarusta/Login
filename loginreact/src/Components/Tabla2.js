@@ -1,25 +1,26 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import MaterialTable from "material-table";
+import { datosTabla } from "../redux/actions/User";
 
 class TablaEdit extends Component {
   render() {
     //const { datostabla } = this.props;
     const state = {
       columns: [
-        { title: "Name", field: "name" },
-        { title: "E-mail address", field: "E-mail address", type: "string" },
+        { title: "Name", field: "title" },
+        { title: "E-mail address", field: "email" },
         { title: "uuid", field: "uuid", type: "numeric" },
-        { title: "Premium Plan", field: "Premium Plan", type: "numeric" }
-      ],
-      data: this.props.datostabla
+        { title: "Premium Plan", field: "price", type: "numeric" }
+      ]
     };
-
+    const { datostabla } = this.props;
+    console.log("TABLA2", datostabla);
     return (
       <MaterialTable
-        title='Editable Example'
+        title='Clientes'
         columns={state.columns}
-        data={state.data}
+        data={datostabla}
         editable={{
           onRowAdd: (newData) =>
             new Promise((resolve) => {

@@ -157,7 +157,7 @@ class HomePage extends Component {
               <div>
                 <SearchExampleStandard />
                 <TablaEdit />
-                <TableExampleSingleLine />
+                {/* <TableExampleSingleLine /> */}
               </div>
             ) : (
               <div className='gradient-2' onClick={() => this.handleNoVer()}>
