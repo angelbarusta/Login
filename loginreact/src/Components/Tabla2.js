@@ -13,7 +13,9 @@ class TablaEdit extends Component {
         { title: "Name", field: "title" },
         { title: "E-mail address", field: "email" },
         { title: "uuid", field: "uuid", type: "numeric" },
-        { title: "Premium Plan", field: "price", type: "numeric" }
+        { title: "Premium Plan", field: "price", type: "numeric" },
+        { title: "Descripcion", field: "description" },
+        { title: "friends", field: "friends", type: "numeric" }
       ]
     };
     const { datostabla } = this.props;
