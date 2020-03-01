@@ -14,6 +14,8 @@ import {
 } from "semantic-ui-react";
 import { datosTabla, SelectdatosTabla } from "../redux/actions/User";
 
+import "./search.css";
+
 const initialState = { isLoading: false, results: [], value: "" };
 
 // const source = _.times(5, () => ({
@@ -62,7 +64,7 @@ class SearchExampleStandard extends Component {
 
     const cuerpo = selectdatos.map((s, i) => {
       return (
-        <Card>
+        <Card style={{ padding: 20, margin: "auto" }}>
           <Image floated='right' src={s.image} wrapped ui={false} size='mini' />
           <Card.Content>
             <Card.Header>{s.title}</Card.Header>
@@ -81,37 +83,30 @@ class SearchExampleStandard extends Component {
     });
 
     return (
-      <Grid>
-        {" "}
-        <Grid.Column width={6}>
-          <Search
-            loading={isLoading}
-            onResultSelect={this.handleResultSelect}
-            onSearchChange={_.debounce(this.handleSearchChange, 500, {
-              leading: true
-            })}
-            results={results}
-            value={value}
-            {...this.props}
-          />
-        </Grid.Column>
-        <Grid.Column width={10}>
-          <Segment>
-            {/* <Header>State</Header>
-            <pre style={{ overflowX: "auto" }}>
-              {JSON.stringify(this.state, null, 2)}
-            </pre> */}
-            <Header>Cliente</Header>
-            <div style={{ overflowX: "auto" }}>
-              {selectdatos != null || selectdatos != undefined ? (
-                <Card.Group>{cuerpo}</Card.Group>
-              ) : (
-                <div>MAL</div>
-              )}
-            </div>
-          </Segment>
-        </Grid.Column>
-      </Grid>
+      <div>
+        <Grid>
+          {" "}
+          <Grid.Column width={6}>
+            <Search
+              loading={isLoading}
+              onResultSelect={this.handleResultSelect}
+              onSearchChange={_.debounce(this.handleSearchChange, 500, {
+                leading: true
+              })}
+              results={results}
+              value={value}
+              {...this.props}
+            />
+          </Grid.Column>
+        </Grid>
+        <div className='AvatarSelect'>
+          {selectdatos != null || selectdatos != undefined ? (
+            <div className='perfiles'>{cuerpo}</div>
+          ) : (
+            <div>MAL</div>
+          )}
+        </div>
+      </div>
     );
   }
 }

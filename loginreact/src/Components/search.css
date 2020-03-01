@@ -1,0 +1,13 @@
+
+
+.AvatarSelect{
+    width: 100%; 
+}
+.perfiles{
+    overflow-x: auto 
+}
+@media (max-width:650){
+    .AvatarSelect{
+        overflow-x: auto 
+    }
+}
