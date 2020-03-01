@@ -110,7 +110,13 @@ class HomePage extends Component {
     return (
       <div>
         <div className='fondoHome' onClick={() => this.navi()}>
-          <div style={{ color: "rgb(214, 228, 206)", position: "fixed" }}>
+          <div
+            style={{
+              color: "rgb(214, 228, 206)",
+              position: "fixed",
+              width: "100%",
+              background: "white"
+            }}>
             <AuthUserContext.Consumer>
               {(authUser) => (
                 <div style={{ padding: "100px 20px 20px 10px" }}>
@@ -130,7 +136,9 @@ class HomePage extends Component {
                 color: "#a7ca94"
               }}>
               <Menu.Item
-                style={{ color: "rgb(214, 228, 206)" }}
+                style={{
+                  color: "rgb(214, 228, 206)"
+                }}
                 name='cuenta iniciada'
                 active={activeItem === "Home"}
               />
