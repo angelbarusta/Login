@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Table } from "semantic-ui-react";
 
+import "./Tabla.css";
+
 class TableExampleSingleLine extends Component {
   render() {
     const { datostabla } = this.props;
@@ -18,7 +20,7 @@ class TableExampleSingleLine extends Component {
     });
 
     return (
-      <Table singleLine>
+      <Table singleLine className='TablaGeneral'>
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>

@@ -1,0 +1,9 @@
+.TablaGeneral{
+    padding: 10em;
+}
+
+@media (max-width:650px){
+    .TablaGeneral{
+        padding: 0em;
+    }
+}
