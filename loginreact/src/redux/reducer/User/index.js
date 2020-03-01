@@ -2,6 +2,7 @@ import * as types from "../../Types";
 
 import _ from "lodash";
 import faker from "faker";
+import moment from "moment";
 
 const source = _.times(5, () => ({
   title: faker.name.findName(),
