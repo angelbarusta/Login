@@ -13,6 +13,9 @@ class TablaEdit extends Component {
     var timeR = moment(new Date()).format("DD/MM/YYYY | HH:mm:ss");
     this.setState({ timeS: timeR });
   };
+  handleClik = () => {
+    setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
+  };
   render() {
     //const { datostabla } = this.props;
     const state = {
@@ -29,7 +32,7 @@ class TablaEdit extends Component {
     const { datostabla } = this.props;
 
     return (
-      <div className='TablaGeneral'>
+      <div className='TablaGeneral' onClick={(e) => this.handleClik(e)}>
         <MaterialTable
           title={state.timeS}
           columns={state.columns}
@@ -71,7 +74,7 @@ class TablaEdit extends Component {
                   const datos = datostabla;
                   //---------------------se extrae
                   var pos = datos.indexOf(oldData);
-                  var pisicion = pos + 1;
+                  // var pisicion = pos + 1;
                   var elementoEliminado = datos.splice(pos, 1);
                   this.props.datosTabla(datos);
                   console.log("DELET", elementoEliminado);
