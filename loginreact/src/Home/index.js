@@ -140,6 +140,7 @@ class HomePage extends Component {
                 style={{
                   color: "rgb(214, 228, 206)"
                 }}
+                href='/home'
                 name='cuenta iniciada'
                 active={activeItem === "Home"}
               />
@@ -147,6 +148,7 @@ class HomePage extends Component {
                 style={{ color: "rgb(214, 228, 206)" }}
                 name='Salir'
                 active={activeItem === "Salir"}
+                href='/'
                 onClick={(e) => this.handleNoVer(e)}
               />
             </Menu>
