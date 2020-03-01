@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import MaterialTable from "material-table";
 import { datosTabla } from "../redux/actions/User";
 
+import "./Tabla.css";
+
 class TablaEdit extends Component {
   render() {
     //const { datostabla } = this.props;
@@ -18,6 +20,7 @@ class TablaEdit extends Component {
     console.log("TABLA2", datostabla);
     return (
       <MaterialTable
+        className='TablaGeneral'
         title='Clientes'
         columns={state.columns}
         data={datostabla}
