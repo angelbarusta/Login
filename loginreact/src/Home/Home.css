@@ -17,3 +17,14 @@
     display: flex;
     justify-content: center;
 }
+
+@media (max-width:650px){
+    .modas{
+        
+        width: 100%;
+        display: -webkit-inline-box;
+        justify-content: center;
+       
+        
+    }
+}

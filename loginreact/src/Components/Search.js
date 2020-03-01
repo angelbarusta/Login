@@ -64,29 +64,35 @@ class SearchExampleStandard extends Component {
 
     const cuerpo = selectdatos.map((s, i) => {
       return (
-        <Card style={{ padding: 20, margin: "auto" }}>
-          <Image floated='right' src={s.image} wrapped ui={false} size='mini' />
-          <Card.Content>
-            <Card.Header>{s.title}</Card.Header>
-            <Card.Meta>Email:{s.email}</Card.Meta>
-            <Card.Meta>uuid:{s.uuid}</Card.Meta>
-            <Card.Description>Work{s.description}</Card.Description>
-          </Card.Content>
-          <Card.Content extra>
-            <a>
-              <Icon name='user' />
-              {s.friends} Friends
-            </a>
-          </Card.Content>
-        </Card>
+        <div>
+          <hr />
+          <Card style={{ paddingTop: 110, margin: "auto", width: "50%" }}>
+            <div style={{ width: 500 }}>
+              <Image circular floated='center' src={s.image} size='tiny' />
+            </div>
+            <Card.Content>
+              <Card.Header>{s.title}</Card.Header>
+              <Card.Meta>Email:{s.email}</Card.Meta>
+              <Card.Meta>uuid:{s.uuid}</Card.Meta>
+              <Card.Description>Work{s.description}</Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+              <a>
+                <Icon name='user' />
+                {s.friends} Friends
+              </a>
+            </Card.Content>
+          </Card>
+          <hr />
+        </div>
       );
     });
 
     return (
       <div>
-        <Grid>
+        <Grid style={{ paddingBottom: 20 }}>
           {" "}
-          <Grid.Column width={6}>
+          <Grid.Column width={10}>
             <Search
               loading={isLoading}
               onResultSelect={this.handleResultSelect}

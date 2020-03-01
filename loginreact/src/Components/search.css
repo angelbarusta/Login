@@ -2,12 +2,21 @@
 
 .AvatarSelect{
     width: 100%; 
+    display: flex;
 }
 .perfiles{
-    overflow-x: auto 
+    overflow-x: auto;
+    height: 40vh;
+    width: 100vw;
 }
 @media (max-width:650){
     .AvatarSelect{
         overflow-x: auto 
+    }
+    .perfiles{
+        overflow-x: auto;
+        width: 100vw;
+        height: 45vh;
+        display: flex;
     }
 }
