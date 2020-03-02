@@ -157,10 +157,9 @@ class HomePage extends Component {
           <div className='modas'>
             <div>
               <SearchExampleStandard />
-              <TablaEdit />
-              {/* <TableExampleSingleLine /> */}
             </div>
           </div>
+          <TablaEdit />
         </div>
       </div>
     );
