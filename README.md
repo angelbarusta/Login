@@ -6,6 +6,12 @@
 ![Screenshot](database.png)
 ## Landing
 ![Screenshot](Landing.png)
+## Login
+![Screenshot](Login.png)
+## Registro
+![Screenshot](registro.png)
+## Reset pass
+![Screenshot](reset-contra.png)
 ## Home
 ![Screenshot](Home.png)
 ## Search
