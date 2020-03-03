@@ -27,7 +27,12 @@ const SignInPage = (props) => (
       <Card stackable style={{ padding: 20 }}>
         <div>
           <div>
-            <h1 className='Inises'>Inicia sesión</h1>
+            <h1 className='Inises' style={{ paddingTop: 20 }}>
+              Chatbot buscador
+            </h1>
+            <h1 className='Inises' style={{ paddingTop: 20 }}>
+              Inicia sesión
+            </h1>
             <Icon className='Inises' circular name='user' />
           </div>
           <SignInForm />
