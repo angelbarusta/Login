@@ -4,7 +4,7 @@ import { withAuthorization } from "../Session";
 
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { vnavNo, activeItemNavHome, dashPets } from "../redux/actions/Nav";
+import { vnavNo, activeItemNavHome } from "../redux/actions/Nav";
 
 import {
   Divider,
@@ -181,9 +181,6 @@ const mapDipatchToProps = (dispatch) => {
     },
     activeItemNavHome(name2) {
       dispatch(activeItemNavHome(name2));
-    },
-    dashPets(p) {
-      dispatch(dashPets(p));
     }
   };
 };

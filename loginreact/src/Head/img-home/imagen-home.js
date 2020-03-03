@@ -3,7 +3,7 @@ import user from "../../imagenes/az-nuevo.png";
 import "./imagen-home.scss";
 import { vnavSi } from "../../redux/actions/Nav";
 import { connect } from "react-redux";
-import { OpenGraf } from "../../redux/actions/Campo";
+
 import { AuthUserContext } from "../../Session";
 import { Popup } from "semantic-ui-react";
 
@@ -55,9 +55,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     vnavSi(nav) {
       dispatch(vnavSi(nav));
-    },
-    OpenGraf(f) {
-      dispatch(OpenGraf(f));
     }
   };
 };

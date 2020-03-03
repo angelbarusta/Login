@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { withFirebase } from "../Firebase";
 import { connect } from "react-redux";
 import { vnavNo } from "../redux/actions/Nav";
-import { OpenGraf } from "../redux/actions/Campo";
 
 const INITIAL_STATE = {
   passwordOne: "",
@@ -102,9 +101,6 @@ const mapDipatchToProps = (dispatch) => {
   return {
     vnavNo(nav) {
       dispatch(vnavNo(nav));
-    },
-    OpenGraf(f) {
-      dispatch(OpenGraf(f));
     }
   };
 };
