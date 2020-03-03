@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { compose } from "recompose";
 
 import { Button, Icon, Card, Popup } from "semantic-ui-react";
@@ -40,9 +40,9 @@ const SignInPage = (props) => (
             <Popup
               content='Regresar a landing principal'
               trigger={
-                <a href='/'>
+                <Link to='/'>
                   <Icon circular name='home' />
-                </a>
+                </Link>
               }
             />
           </div>

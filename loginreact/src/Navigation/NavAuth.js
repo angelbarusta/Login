@@ -162,7 +162,15 @@ class NavigationAuth extends Component {
         ),
         icon: "settings"
       },
-      { key: "sign-out", text: <SignOutButton />, icon: "sign-out" }
+      {
+        key: "sign-out",
+        text: (
+          <Link to='/signin'>
+            <SignOutButton />
+          </Link>
+        ),
+        icon: "sign-out"
+      }
     ];
 
     /////////////////////////////////////////az////////////////
@@ -185,10 +193,10 @@ class NavigationAuth extends Component {
           </Link>
         ),
         icon: <Image circular src={logo} />
-      },
-      { key: "About", text: "About", icon: "users" },
-      { key: "Projects", text: "Projects", icon: "lightbulb outline" },
-      { key: "Contact", text: "Contact", icon: "phone" }
+      }
+      // { key: "About", text: "About", icon: "users" }
+      // { key: "Projects", text: "Projects", icon: "lightbulb outline" },
+      // { key: "Contact", text: "Contact", icon: "phone" }
     ];
     //////////////////////////////////////////////////////////////////////////////////////////////////////
     const triggerIot = (
@@ -217,7 +225,7 @@ class NavigationAuth extends Component {
           <Link
             style={{ color: "black" }}
             role='button'
-            to='/ykan'
+            to='/home'
             onClick={(e) => this.activeItemNavHome(e)}>
             Proyecto 1
           </Link>
@@ -253,7 +261,7 @@ class NavigationAuth extends Component {
           <Link
             style={{ color: "black" }}
             role='button'
-            to={`/home/Ykan/${uid}/${nameUser}`}
+            to={`/home`}
             onClick={(e) => this.activeItemNavNoti(e)}
           />
         ),
@@ -261,7 +269,7 @@ class NavigationAuth extends Component {
           <Link
             style={{ color: "black" }}
             role='button'
-            to={`/home/Ykan/${uid}/${nameUser}`}
+            to='/home'
             onClick={(e) => this.activeItemNavNoti(e)}>
             <div className='Noti_Ykan'>
               <Label

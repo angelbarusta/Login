@@ -20,9 +20,9 @@ const SignUpPage = (props) => (
       <Popup
         content='Regresar a landing principal'
         trigger={
-          <a href='/'>
+          <Link to='/'>
             <Icon circular name='home' />
-          </a>
+          </Link>
         }
       />
     </div>

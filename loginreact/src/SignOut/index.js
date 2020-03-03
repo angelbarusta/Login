@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 const SignOutButton = ({ firebase }) => (
   <Link
-    href='/signin'
+    to='/signin'
     className='btn nav-item'
     role='button'
     aria-pressed='true'
-    onClick={firebase.doSignOut}
+    onClick={(e) => firebase.doSignOut(e)}
     style={{ color: "black" }}>
     Cerrar sesión
   </Link>

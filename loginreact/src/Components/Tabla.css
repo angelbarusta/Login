@@ -2,10 +2,10 @@
     padding: 10em;
     
     /* position: absolute; */
-}::-webkit-scrollbar {
-    display: none;
 }
-
+/* ::-webkit-scrollbar {
+    display: none;
+} */
 @media (max-width:650px){
     .TablaGeneral{
         padding: 0em;

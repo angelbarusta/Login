@@ -4,6 +4,7 @@ import { Menu, Segment } from "semantic-ui-react";
 import Imgperfil from "../Head/img-home/imagen-home";
 
 import "../App.css";
+import { Link } from "react-router-dom";
 
 class NavigationNonAuth extends Component {
   // si el usuario no esta autenticado en az
@@ -18,21 +19,21 @@ class NavigationNonAuth extends Component {
           </a>
         </div>
         <nav className='navbar navbar-light'>
-          <a
+          <Link
             style={{ margin: 10 }}
-            href='/signup'
+            to='/signup'
             className='btn btn-primary btn-sm buton-in'
             role='button'
             aria-pressed='true'>
             Registrarse
-          </a>
-          <a
-            href='/signin'
+          </Link>
+          <Link
+            to='/signin'
             className='btn btn-success btn-in btn-sm buton-rn'
             role='button'
             aria-pressed='true'>
             Inicia seción
-          </a>
+          </Link>
         </nav>
       </nav>
     );
