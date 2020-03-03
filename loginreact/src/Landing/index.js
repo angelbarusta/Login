@@ -40,7 +40,12 @@ const Landing = (props) => {
               <div className='LoginLanding' stackable style={{ padding: 20 }}>
                 <div>
                   <div>
-                    <h1 className='Inises-Lan'>Inicia sesión</h1>
+                    <h2 className='Inises' style={{ paddingTop: 20 }}>
+                      Chatbot buscador
+                    </h2>
+                    <h1 className='Inises-Lan' style={{ paddingTop: 20 }}>
+                      Inicia sesión
+                    </h1>
                     <Icon className='Inises-Lan' circular name='user' />
                   </div>
                   <SignInForm />
@@ -73,7 +78,7 @@ const Landing = (props) => {
               <div className='LoginLanding' stackable style={{ padding: 20 }}>
                 <div>
                   <div>
-                    <h1 className='Inises-Lan'>
+                    <h1 className='Inises-Lan' style={{ paddingTop: 20 }}>
                       Bienvenido {authUser.displayName}
                     </h1>
                   </div>
