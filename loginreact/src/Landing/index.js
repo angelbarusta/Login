@@ -12,8 +12,25 @@ import { AuthUserContext } from "../Session";
 
 import linechart from "../imagenes/linechart.png";
 import SignOut from "../SignOut";
+import { Link } from "react-router-dom";
 
 const Landing = (props) => {
+  let clientes = props.datostabla;
+
+  let topClientes = clientes.splice(0, 5);
+  const topmap = topClientes.map((s, i) => {
+    return (
+      <List>
+        <List.Item>
+          <Image avatar circular src={s.image} />
+          <List.Content>
+            <List.Header>{s.title}</List.Header>
+            {s.description}
+          </List.Content>
+        </List.Item>
+      </List>
+    );
+  });
   return (
     <div onClick={() => props.vnavNo(false)} className='SiginStyl'>
       <AuthUserContext.Consumer>
@@ -36,9 +53,9 @@ const Landing = (props) => {
                     <Popup
                       content='Regresar a landing principal'
                       trigger={
-                        <a href='/'>
+                        <Link to='/'>
                           <Icon circular name='home' />
-                        </a>
+                        </Link>
                       }
                     />
                   </div>
@@ -60,16 +77,22 @@ const Landing = (props) => {
                       Bienvenido {authUser.displayName}
                     </h1>
                   </div>
-                  <List items={["Apples", "Pears", "Oranges"]} />
+
+                  <div style={{ paddingTop: 30 }}>
+                    <h1 className='Inises-Lan'>Top Clientes</h1>
+                    <div style={{ paddingTop: 20 }}>{topmap}</div>
+                  </div>
+
+                  {/* <List items={topClientes} /> */}
 
                   <div
                     style={{ padding: "20px 20px 0px 0px", cursor: "pointer" }}>
                     <Popup
                       content='Mostrar tablas'
                       trigger={
-                        <a href='/home'>
+                        <Link to='/home'>
                           <Image src={linechart} className='ImaLanding' />
-                        </a>
+                        </Link>
                       }
                     />
                   </div>
@@ -89,7 +112,8 @@ const Landing = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    nav: state.Nav.nav
+    nav: state.Nav.nav,
+    datostabla: state.User.datostabla
   };
 };
 const mapDipatchToProps = (dispatch) => {

@@ -214,7 +214,7 @@ class NavigationAuth extends Component {
             role='button'
             to='/home'
             onClick={(e) => this.activeItemNavHome(e)}>
-            Iot Project Home
+            Project Home
           </Link>
         ),
         icon: "area graph"
@@ -227,7 +227,7 @@ class NavigationAuth extends Component {
             role='button'
             to='/home'
             onClick={(e) => this.activeItemNavHome(e)}>
-            Proyecto 1
+            Top clientes
           </Link>
         ),
         icon: <Image src={logo2} circular />

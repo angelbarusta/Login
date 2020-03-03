@@ -105,7 +105,6 @@ class HomePage extends Component {
     var hch = moment(new Date()).format("HH:mm"); // estas seran la fecha de su ultima lectura
     var dataf = `Fecha ${fch} ||   ${hch} hrs`; // estas seran la fecha de su ultima lectura
 
-    var { DashPets } = this.props;
     const { activeItem, userName, photoUser, uid, selM } = this.state;
 
     return (
@@ -140,7 +139,7 @@ class HomePage extends Component {
                 style={{
                   color: "rgb(214, 228, 206)"
                 }}
-                href='/home'
+                to='/home'
                 name='cuenta iniciada'
                 active={activeItem === "Home"}
               />
@@ -148,7 +147,7 @@ class HomePage extends Component {
                 style={{ color: "rgb(214, 228, 206)" }}
                 name='Salir'
                 active={activeItem === "Salir"}
-                href='/'
+                to='/'
                 onClick={(e) => this.handleNoVer(e)}
               />
             </Menu>
