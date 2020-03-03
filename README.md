@@ -1,6 +1,8 @@
 # Login
 
-## auth Google,Facebook,Email
+## auth con Google,Facebook,Email
+### iniciar preferentemente con Google o con Facebook
+
 ![Screenshot](Auth.png)
 ## Database
 ![Screenshot](database.png)
