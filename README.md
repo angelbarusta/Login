@@ -22,6 +22,8 @@ You will also see any lint errors in the console.
 ![Screenshot](Landing.png)
 ## Login
 ![Screenshot](Login.png)
+## Landing autenticado
+![Screenshot](tabla-newclient.png)
 ## Registro
 ![Screenshot](registro.png)
 ## Reset pass
@@ -42,6 +44,7 @@ You will also see any lint errors in the console.
 ![Screenshot](tabla-add.png)
 ## Table new client
 ![Screenshot](tabla-newclient.png)
+
 
 ## Deploy
 ## https://chatbot-cielo.firebaseapp.com/
