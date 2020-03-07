@@ -23,7 +23,7 @@ You will also see any lint errors in the console.
 ## Login
 ![Screenshot](Login.png)
 ## Landing autenticado
-![Screenshot](tabla-newclient.png)
+![Screenshot](landing-autenticado.png)
 ## Registro
 ![Screenshot](registro.png)
 ## Reset pass
