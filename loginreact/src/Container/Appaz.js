@@ -19,18 +19,76 @@ import Imgperfil from "../Head/img-home/imagen-home";
 import PerfilCliente from "../Account/Uid";
 
 import { AuthUserContext } from "../Session";
-import { Transition, Divider, Button, Menu } from "semantic-ui-react";
+import {
+  Transition,
+  Divider,
+  Button,
+  Menu,
+  List,
+  Image
+} from "semantic-ui-react";
 import Landing from "../Landing";
 
+import moment from "moment";
+
 class Appaz extends Component {
-  state = { visible: true };
+  state = {
+    visible: true,
+    timeS: moment(new Date()).format("YYYY-MM-DD"),
+    topClientes: []
+  };
+
+  componentWillMount() {
+    let topCli = this.props.datostabla.splice(0, 5);
+    this.setState({
+      topClientes: topCli
+    });
+  }
+
+  componentWillUpdate() {
+    setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
+  }
 
   toggleVisibility = () =>
     this.setState((prevState) => ({ visible: !prevState.visible }));
 
+  muestraReloj = () => {
+    var fch = moment(new Date()).format("YYYY-MM-DD"); // estas seran la fecha de su ultima lectura
+    var hch = moment(new Date()).format("HH:mm:ss"); // estas seran la fecha de su ultima lectura
+    var dataf = `Fecha ${fch} ,   ${hch} hrs`; // estas seran la fecha de su ultima lectura
+
+    var timeR = moment(new Date()).format("DD/MM/YYYY | HH:mm:ss");
+    this.setState({ timeS: dataf });
+  };
+  handleClik = () => {
+    setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
+  };
+
   render() {
-    const { nav } = this.props;
-    const { visible } = this.state;
+    const { nav, datostabla } = this.props;
+    const { visible, timeS, topClientes } = this.state;
+
+    // for (let i = 0; i < 5; i++) {
+    //   const topClientes = datostabla[i];
+
+    //   console.log("TOP5", topClientes);
+    //   return topClientes;
+    // }
+
+    const topmap = topClientes.map((s, i) => {
+      return (
+        <List>
+          <List.Item>
+            <Image avatar circular src={s.image} />
+            <List.Content>
+              <List.Header>{s.title}</List.Header>
+              {s.description}
+            </List.Content>
+          </List.Item>
+        </List>
+      );
+    });
+
     return (
       <Router>
         <div style={{ width: "100%" }}>
@@ -56,7 +114,10 @@ class Appaz extends Component {
               <Navigation />
             </div>
           )}
-          <Route exact path={ROUTES.LANDING} component={Landing} />
+          <Route exact path={ROUTES.LANDING}>
+            <Landing datostabla={datostabla} topmap={topmap} timeS={timeS} />
+          </Route>
+
           <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
           <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
           <Route
@@ -64,7 +125,9 @@ class Appaz extends Component {
             path={ROUTES.PASSWORD_FORGET}
             component={PasswordForgetPage}
           />
-          <Route exact path={ROUTES.HOME} component={HomePage} />
+          <Route exact path={ROUTES.HOME}>
+            <HomePage datostabla={datostabla} timeS={timeS} />
+          </Route>
           {
             <AuthUserContext.Consumer>
               {(authUser) =>
@@ -101,7 +164,8 @@ class Appaz extends Component {
 const mapStateToProps = (state) => {
   console.log("STATE", state);
   return {
-    nav: state.Nav.nav
+    nav: state.Nav.nav,
+    datostabla: state.User.datostabla
   };
 };
 const mapDispatchToProps = (dispatch) => {

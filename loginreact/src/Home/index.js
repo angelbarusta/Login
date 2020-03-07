@@ -106,7 +106,7 @@ class HomePage extends Component {
     var dataf = `Fecha ${fch} ||   ${hch} hrs`; // estas seran la fecha de su ultima lectura
 
     const { activeItem, userName, photoUser, uid, selM } = this.state;
-    const { datostabla } = this.props;
+    const { datostabla, timeS } = this.props;
     return (
       <div>
         <div className='fondoHome' onClick={() => this.navi()}>
@@ -156,7 +156,7 @@ class HomePage extends Component {
           <div className='modas'>
             <div>
               <SearchExampleStandard />
-              <TablaEdit datostabla={datostabla} />
+              <TablaEdit datostabla={datostabla} timeS={timeS} />
             </div>
           </div>
         </div>
@@ -169,9 +169,8 @@ const condition = (authUser) => !!authUser;
 
 const mapStateToProps = (state) => {
   return {
-    nav: state.Nav.nav,
-    datostabla: state.User.datostabla,
-    DashPets: state.Nav.dashPets
+    nav: state.Nav.nav
+    //datostabla: state.User.datostabla
   };
 };
 const mapDipatchToProps = (dispatch) => {

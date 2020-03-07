@@ -4,6 +4,7 @@ import MaterialTable from "material-table";
 import { datosTabla } from "../redux/actions/User";
 import moment from "moment";
 import "./Tabla.css";
+import { emphasize } from "@material-ui/core";
 
 class TablaEdit extends Component {
   componentWillUpdate() {
@@ -19,7 +20,6 @@ class TablaEdit extends Component {
   render() {
     //const { datostabla } = this.props;
     const state = {
-      timeS: moment(new Date()).format("DD/MM/YYYY | HH:mm:ss"),
       columns: [
         { title: "Name", field: "title" },
         { title: "E-mail address", field: "email" },
@@ -29,20 +29,20 @@ class TablaEdit extends Component {
         { title: "friends", field: "friends", type: "numeric" }
       ]
     };
-    // const { datostabla } = this.props;
-    var datostabla = this.props.datostabla;
+    //const { datostabla } = this.props;
+    //var datostabla = this.props.datostabla;
     return (
       <div className='TablaGeneral' onClick={(e) => this.handleClik(e)}>
         <MaterialTable
-          title={state.timeS}
+          title={this.props.timeS}
           columns={state.columns}
-          data={datostabla}
+          data={this.props.datostabla}
           editable={{
             onRowAdd: (newData) =>
               new Promise((resolve) => {
                 setTimeout(() => {
                   resolve();
-                  const datos = datostabla;
+                  const datos = this.props.datostabla;
                   datos.push(newData);
                   this.props.datosTabla(datos);
                 }, 600);
@@ -52,7 +52,7 @@ class TablaEdit extends Component {
                 setTimeout(() => {
                   resolve();
                   if (oldData) {
-                    const datos = datostabla;
+                    const datos = this.props.datostabla;
                     datos[datos.indexOf(oldData)] = newData;
                     //---------------------se extrae
                     var pos = datos.indexOf(oldData);
@@ -71,15 +71,15 @@ class TablaEdit extends Component {
               new Promise((resolve) => {
                 setTimeout(() => {
                   resolve();
-                  const datos = datostabla;
+                  const datos = this.props.datostabla;
                   //---------------------se extrae
                   var pos = datos.indexOf(oldData);
                   // var pisicion = pos + 1;
                   var elementoEliminado = datos.splice(pos, 1);
                   this.props.datosTabla(datos);
-                  console.log("DELET", elementoEliminado);
-                  console.log("POSI", pos);
-                }, 600);
+                  //console.log("DELET", elementoEliminado);
+                  //console.log("POSI", pos);
+                }, 1000);
               })
           }}
         />
@@ -87,12 +87,6 @@ class TablaEdit extends Component {
     );
   }
 }
-// const mapStateToProps = (state) => {
-//   return {
-//     datostabla: state.User.datostabla,
-//     selectdatos: state.User.selectdatos
-//   };
-// };
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -102,4 +96,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapDispatchToProps)(TablaEdit);
+export default connect(null, mapDispatchToProps)(TablaEdit);

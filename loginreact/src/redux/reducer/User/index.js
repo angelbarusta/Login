@@ -15,8 +15,8 @@ const source = _.times(25, () => ({
 
 const initialState = {
   user: {},
-  datostabla: source,
-  selectdatos: source
+  datostabla: source
+  //selectdatos: source
 };
 
 const reducer = (state = initialState, action) => {

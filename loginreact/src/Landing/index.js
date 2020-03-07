@@ -17,23 +17,8 @@ import TablaEdit from "../Components/Tabla2";
 
 class Landing extends Component {
   render() {
-    const { datostabla } = this.props;
-    //console.log("CLIENTES", clientes);
-    let topClientes = datostabla.splice(0, 5);
+    const { datostabla, topmap, timeS } = this.props;
 
-    const topmap = topClientes.map((s, i) => {
-      return (
-        <List>
-          <List.Item>
-            <Image avatar circular src={s.image} />
-            <List.Content>
-              <List.Header>{s.title}</List.Header>
-              {s.description}
-            </List.Content>
-          </List.Item>
-        </List>
-      );
-    });
     return (
       <div onClick={() => this.props.vnavNo(false)} className='SiginStyl'>
         <AuthUserContext.Consumer>
@@ -84,6 +69,7 @@ class Landing extends Component {
                       <h1 className='Inises-Lan' style={{ paddingTop: 20 }}>
                         Bienvenido {authUser.displayName}
                       </h1>
+                      {/* <p>{timeS}</p> */}
                     </div>
 
                     <div style={{ paddingTop: 30 }}>
@@ -107,7 +93,11 @@ class Landing extends Component {
                     </div>
                   </div>
                 </div>
-                <TablaEdit className='SiginStyl' datostabla={topClientes} />
+                <TablaEdit
+                  className='SiginStyl'
+                  datostabla={datostabla}
+                  timeS={timeS}
+                />
                 <div
                   style={{ padding: "20px 20px 0px 0px", cursor: "pointer" }}>
                   <SignOut />
@@ -123,8 +113,8 @@ class Landing extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    nav: state.Nav.nav,
-    datostabla: state.User.datostabla
+    nav: state.Nav.nav
+    //datostabla: state.User.datostabla
   };
 };
 const mapDipatchToProps = (dispatch) => {

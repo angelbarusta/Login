@@ -64,11 +64,11 @@ class SearchExampleStandard extends Component {
 
   render() {
     const source = this.props.datosTabla;
-    const { selectdatos } = this.props;
+    const { datostabla } = this.props;
 
     const { isLoading, value, results } = this.state;
 
-    const cuerpo = selectdatos.map((s, i) => {
+    const cuerpo = datostabla.map((s, i) => {
       return (
         <div>
           <hr />
@@ -113,7 +113,7 @@ class SearchExampleStandard extends Component {
           </Grid.Column>
         </Grid>
         <div className='AvatarSelect'>
-          {selectdatos != null || selectdatos != undefined ? (
+          {datostabla != null || datostabla != undefined ? (
             <div className='perfiles'>{cuerpo}</div>
           ) : (
             <div>MAL</div>
@@ -125,8 +125,8 @@ class SearchExampleStandard extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    datostabla: state.User.datostabla,
-    selectdatos: state.User.selectdatos
+    datostabla: state.User.datostabla
+    //selectdatos: state.User.selectdatos
   };
 };
 const mapDispatchToProps = (dispatch) => {
