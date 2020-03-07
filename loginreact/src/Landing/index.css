@@ -30,6 +30,12 @@
     width: 400px;
    padding-top: 100px;
 }
+.Formu-Lan-Auth{
+        display: grid;
+        grid-template-columns: 25% 75%;
+        width: 100%;
+        padding: 2em 1em;
+}
 
 @media  (max-width:640px) {
     .LoginLanding{
@@ -42,6 +48,12 @@
         width: 100%;
         padding: 10em 0em;
     }
+    .Formu-Lan-Auth{
+        display: block;
+        justify-content: center;
+        width: 100%;
+        padding: 10em 0em;
+}
     .ImaLanding{
         min-width: 100px;
         max-width: 200px;

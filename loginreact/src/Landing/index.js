@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import { Button, Icon, Card, Popup, List, Image } from "semantic-ui-react";
 import { SignInForm, SignInGoogle, SignInFacebook } from "../SignIn";
@@ -13,107 +13,113 @@ import { AuthUserContext } from "../Session";
 import linechart from "../imagenes/linechart.png";
 import SignOut from "../SignOut";
 import { Link } from "react-router-dom";
+import TablaEdit from "../Components/Tabla2";
 
-const Landing = (props) => {
-  let clientes = props.datostabla;
+class Landing extends Component {
+  render() {
+    const { datostabla } = this.props;
+    //console.log("CLIENTES", clientes);
+    let topClientes = datostabla.splice(0, 5);
 
-  let topClientes = clientes.splice(0, 5);
-  const topmap = topClientes.map((s, i) => {
+    const topmap = topClientes.map((s, i) => {
+      return (
+        <List>
+          <List.Item>
+            <Image avatar circular src={s.image} />
+            <List.Content>
+              <List.Header>{s.title}</List.Header>
+              {s.description}
+            </List.Content>
+          </List.Item>
+        </List>
+      );
+    });
     return (
-      <List>
-        <List.Item>
-          <Image avatar circular src={s.image} />
-          <List.Content>
-            <List.Header>{s.title}</List.Header>
-            {s.description}
-          </List.Content>
-        </List.Item>
-      </List>
+      <div onClick={() => this.props.vnavNo(false)} className='SiginStyl'>
+        <AuthUserContext.Consumer>
+          {(authUser) =>
+            authUser == null && (
+              <div className='Formu-Lan '>
+                <div className='LoginLanding' stackable style={{ padding: 20 }}>
+                  <div>
+                    <div>
+                      <h2 className='Inises' style={{ paddingTop: 20 }}>
+                        Chatbot buscador
+                      </h2>
+                      <h1 className='Inises-Lan' style={{ paddingTop: 20 }}>
+                        Inicia sesión
+                      </h1>
+                      <Icon className='Inises-Lan' circular name='user' />
+                    </div>
+                    <SignInForm />
+                    <SignInGoogle />
+                    <SignInFacebook />
+                    <PasswordForgetLink />
+                    <SignUpLink />
+
+                    <div style={{ padding: "20px 20px 0px 0px" }}>
+                      <Popup
+                        content='Regresar a landing principal'
+                        trigger={
+                          <Link to='/'>
+                            <Icon circular name='home' />
+                          </Link>
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+                <Masa className='SiginStyl' />
+              </div>
+            )
+          }
+        </AuthUserContext.Consumer>
+        <AuthUserContext.Consumer>
+          {(authUser) =>
+            authUser != null && (
+              <div className='Formu-Lan-Auth '>
+                <div className='LoginLanding' stackable style={{ padding: 20 }}>
+                  <div>
+                    <div>
+                      <h1 className='Inises-Lan' style={{ paddingTop: 20 }}>
+                        Bienvenido {authUser.displayName}
+                      </h1>
+                    </div>
+
+                    <div style={{ paddingTop: 30 }}>
+                      <h1 className='Inises-Lan'>Top Clientes</h1>
+                      <div style={{ paddingTop: 20 }}>{topmap}</div>
+                    </div>
+
+                    <div
+                      style={{
+                        padding: "20px 20px 0px 0px",
+                        cursor: "pointer"
+                      }}>
+                      <Popup
+                        content='Mostrar tablas'
+                        trigger={
+                          <Link to='/home'>
+                            <Image src={linechart} className='ImaLanding' />
+                          </Link>
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+                <TablaEdit className='SiginStyl' datostabla={topClientes} />
+                <div
+                  style={{ padding: "20px 20px 0px 0px", cursor: "pointer" }}>
+                  <SignOut />
+                </div>
+              </div>
+            )
+          }
+        </AuthUserContext.Consumer>
+      </div>
     );
-  });
-  return (
-    <div onClick={() => props.vnavNo(false)} className='SiginStyl'>
-      <AuthUserContext.Consumer>
-        {(authUser) =>
-          authUser == null && (
-            <div className='Formu-Lan '>
-              <div className='LoginLanding' stackable style={{ padding: 20 }}>
-                <div>
-                  <div>
-                    <h2 className='Inises' style={{ paddingTop: 20 }}>
-                      Chatbot buscador
-                    </h2>
-                    <h1 className='Inises-Lan' style={{ paddingTop: 20 }}>
-                      Inicia sesión
-                    </h1>
-                    <Icon className='Inises-Lan' circular name='user' />
-                  </div>
-                  <SignInForm />
-                  <SignInGoogle />
-                  <SignInFacebook />
-                  <PasswordForgetLink />
-                  <SignUpLink />
-
-                  <div style={{ padding: "20px 20px 0px 0px" }}>
-                    <Popup
-                      content='Regresar a landing principal'
-                      trigger={
-                        <Link to='/'>
-                          <Icon circular name='home' />
-                        </Link>
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-              <Masa className='SiginStyl' />
-            </div>
-          )
-        }
-      </AuthUserContext.Consumer>
-      <AuthUserContext.Consumer>
-        {(authUser) =>
-          authUser != null && (
-            <div className='Formu-Lan '>
-              <div className='LoginLanding' stackable style={{ padding: 20 }}>
-                <div>
-                  <div>
-                    <h1 className='Inises-Lan' style={{ paddingTop: 20 }}>
-                      Bienvenido {authUser.displayName}
-                    </h1>
-                  </div>
-
-                  <div style={{ paddingTop: 30 }}>
-                    <h1 className='Inises-Lan'>Top Clientes</h1>
-                    <div style={{ paddingTop: 20 }}>{topmap}</div>
-                  </div>
-
-                  {/* <List items={topClientes} /> */}
-
-                  <div
-                    style={{ padding: "20px 20px 0px 0px", cursor: "pointer" }}>
-                    <Popup
-                      content='Mostrar tablas'
-                      trigger={
-                        <Link to='/home'>
-                          <Image src={linechart} className='ImaLanding' />
-                        </Link>
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-              <Masa className='SiginStyl' />
-              <div style={{ padding: "20px 20px 0px 0px", cursor: "pointer" }}>
-                <SignOut />
-              </div>
-            </div>
-          )
-        }
-      </AuthUserContext.Consumer>
-    </div>
-  );
-};
+  }
+}
 
 const mapStateToProps = (state) => {
   return {

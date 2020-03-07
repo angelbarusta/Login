@@ -29,8 +29,8 @@ class TablaEdit extends Component {
         { title: "friends", field: "friends", type: "numeric" }
       ]
     };
-    const { datostabla } = this.props;
-
+    // const { datostabla } = this.props;
+    var datostabla = this.props.datostabla;
     return (
       <div className='TablaGeneral' onClick={(e) => this.handleClik(e)}>
         <MaterialTable
@@ -87,12 +87,12 @@ class TablaEdit extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    datostabla: state.User.datostabla,
-    selectdatos: state.User.selectdatos
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     datostabla: state.User.datostabla,
+//     selectdatos: state.User.selectdatos
+//   };
+// };
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -102,4 +102,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TablaEdit);
+export default connect(mapDispatchToProps)(TablaEdit);
