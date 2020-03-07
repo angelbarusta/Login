@@ -39,7 +39,13 @@ class Appaz extends Component {
   };
 
   componentWillMount() {
-    let topCli = this.props.datostabla.splice(0, 5);
+    const { datostabla } = this.props;
+    let topCli = [];
+    for (let i = 0; i < 5; i++) {
+      const element = datostabla[i];
+      topCli.push(element);
+    }
+
     this.setState({
       topClientes: topCli
     });
@@ -58,7 +64,19 @@ class Appaz extends Component {
     var dataf = `Fecha ${fch} ,   ${hch} hrs`; // estas seran la fecha de su ultima lectura
 
     var timeR = moment(new Date()).format("DD/MM/YYYY | HH:mm:ss");
-    this.setState({ timeS: dataf });
+    // this.setState({ timeS: dataf });
+
+    const { datostabla } = this.props;
+    let topCli = [];
+    for (let i = 0; i < 5; i++) {
+      const element = datostabla[i];
+      topCli.push(element);
+    }
+
+    this.setState({
+      topClientes: topCli,
+      timeS: dataf
+    });
   };
   handleClik = () => {
     setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
