@@ -22,12 +22,12 @@ You will also see any lint errors in the console.
 ![Screenshot](Landing.png)
 ## Login
 ![Screenshot](Login.png)
-## Landing autenticado
-![Screenshot](landing-autenticado.png)
 ## Registro
 ![Screenshot](registro.png)
 ## Reset pass
 ![Screenshot](reset-contra.png)
+## Landing autenticado
+![Screenshot](landing-autenticado.png)
 ## Home
 ![Screenshot](Home.png)
 ## Search
