@@ -63,8 +63,8 @@ class SearchExampleStandard extends Component {
   };
 
   render() {
-    const source = this.props.datosTabla;
-    const { datostabla } = this.props;
+    //const source = this.props.datosTabla;
+    const { datostabla, timeS } = this.props;
 
     const { isLoading, value, results } = this.state;
 
@@ -72,7 +72,7 @@ class SearchExampleStandard extends Component {
       return (
         <div>
           <hr />
-          <p style={{ color: "transparent" }}>{this.state.timeS}</p>
+          <p style={{ color: "transparent" }}>{timeS}</p>
           <Card className='Cartas'>
             <div style={{ width: 500 }}>
               <Image circular floated='center' src={s.image} size='tiny' />
@@ -123,12 +123,7 @@ class SearchExampleStandard extends Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    datostabla: state.User.datostabla
-    //selectdatos: state.User.selectdatos
-  };
-};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     datosTabla(datos) {
@@ -139,7 +134,4 @@ const mapDispatchToProps = (dispatch) => {
     }
   };
 };
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SearchExampleStandard);
+export default connect(null, mapDispatchToProps)(SearchExampleStandard);

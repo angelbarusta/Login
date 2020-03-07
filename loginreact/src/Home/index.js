@@ -155,7 +155,7 @@ class HomePage extends Component {
 
           <div className='modas'>
             <div>
-              <SearchExampleStandard />
+              <SearchExampleStandard datostabla={datostabla} timeS={timeS} />
               <TablaEdit datostabla={datostabla} timeS={timeS} />
             </div>
           </div>
