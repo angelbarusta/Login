@@ -8,10 +8,10 @@
     background: url("../imagenes/atsurabzaid_logo_remasterizado_negativo_expanfet.png") center center / cover no-repeat fixed;
 }
 .modas{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 25% 75%;
     width: 100%;
-    padding: 15em 0em;
+    padding: 2em 1em;
 }
 .center_{
     display: flex;
@@ -21,8 +21,9 @@
 @media (max-width:650px){
     .modas{
         
+        display: block;
+        justify-content: center;
         width: 100%;
-        display: -webkit-inline-box;
-        justify-content: center;   
+        padding: 10em 0em;
     }
 }
