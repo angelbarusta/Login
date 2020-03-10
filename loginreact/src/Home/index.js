@@ -154,12 +154,15 @@ class HomePage extends Component {
                   )
                 }
               </AuthUserContext.Consumer>
-              <Link to='/'>
+              <Link
+                style={{
+                  color: "rgb(214, 228, 206)"
+                }}
+                to='/'>
                 <Menu.Item
                   style={{ color: "rgb(214, 228, 206)" }}
                   name='Salir'
                   active={activeItem === "Salir"}
-                  onClick={(e) => this.handleNoVer(e)}
                 />
               </Link>
             </Menu>
