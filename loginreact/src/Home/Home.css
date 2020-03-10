@@ -9,7 +9,7 @@
 }
 .modas{
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 100%;
     width: 100%;
     padding: 2em 1em;
 }
@@ -20,7 +20,7 @@
 
 @media (max-width:650px){
     .modas{
-        
+        grid-template-columns: 25% 75%;
         display: block;
         justify-content: center;
         width: 100%;
