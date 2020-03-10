@@ -135,21 +135,33 @@ class HomePage extends Component {
                 justifyContent: "flex-start",
                 color: "#a7ca94"
               }}>
-              <Menu.Item
-                style={{
-                  color: "rgb(214, 228, 206)"
-                }}
-                to='/home'
-                name='cuenta iniciada'
-                active={activeItem === "Home"}
-              />
-              <Menu.Item
-                style={{ color: "rgb(214, 228, 206)" }}
-                name='Salir'
-                active={activeItem === "Salir"}
-                to='/'
-                onClick={(e) => this.handleNoVer(e)}
-              />
+              <AuthUserContext.Consumer>
+                {(authUser) =>
+                  authUser != null && (
+                    <Link
+                      style={{
+                        color: "rgb(214, 228, 206)"
+                      }}
+                      to={`/account/settings/${authUser.uid}/${authUser.displayName}`}>
+                      <Menu.Item
+                        style={{
+                          color: "rgb(214, 228, 206)"
+                        }}
+                        name='cuenta iniciada'
+                        active={activeItem === "Home"}
+                      />
+                    </Link>
+                  )
+                }
+              </AuthUserContext.Consumer>
+              <Link to='/'>
+                <Menu.Item
+                  style={{ color: "rgb(214, 228, 206)" }}
+                  name='Salir'
+                  active={activeItem === "Salir"}
+                  onClick={(e) => this.handleNoVer(e)}
+                />
+              </Link>
             </Menu>
           </div>
 
