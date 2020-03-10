@@ -31,6 +31,8 @@ import Landing from "../Landing";
 
 import moment from "moment";
 
+var tempo;
+
 class Appaz extends Component {
   state = {
     visible: true,
@@ -52,7 +54,7 @@ class Appaz extends Component {
   }
 
   componentWillUpdate() {
-    setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
+    tempo = setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
   }
 
   toggleVisibility = () =>
@@ -78,20 +80,14 @@ class Appaz extends Component {
       timeS: dataf
     });
   };
+
   handleClik = () => {
-    setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
+    tempo = setTimeout(this.muestraReloj, 1000); //1 Hra=3600000 1 Min=60000 1 mili=1000
   };
 
   render() {
     const { nav, datostabla } = this.props;
     const { visible, timeS, topClientes } = this.state;
-
-    // for (let i = 0; i < 5; i++) {
-    //   const topClientes = datostabla[i];
-
-    //   console.log("TOP5", topClientes);
-    //   return topClientes;
-    // }
 
     const topmap = topClientes.map((s, i) => {
       return (
@@ -176,6 +172,9 @@ class Appaz extends Component {
         </div>
       </Router>
     );
+  }
+  componentWillUnmount() {
+    clearTimeout(tempo);
   }
 }
 
